@@ -1,0 +1,49 @@
+{
+        "promociones": [
+            {
+            "id": 1,
+            "precio": 5,
+            "foto": "customer001@email.com",
+            "titulo": "Aguas termales en el tena",
+            "descripcion_corta": "Du",
+            "lugar": "0526252525"
+            },
+            {
+            "id": 2,
+            "precio": 15,
+            "foto": "customer001@email.com",
+            "titulo": "0526252525",
+            "descripcion_corta": "0526252525",
+            "lugar": "0526252525"
+            }
+        ],
+        "destinos": [
+            {
+            "id": 1,
+            "zona": "Customer001",
+            "lugar": "Customer001",
+            "precio": "customer001@email.com",
+            "titulo": "0526252525",
+            "descripcion_corta": "0526252525",
+            "ubicacion": "0526252525"
+            }
+        ],
+        "eventos": [
+            {
+            "id": 1,
+            "precio": "customer001@email.com",
+            "titulo": "0526252525",
+            "descripcion_corta": "0526252525",
+            "ubicacion": "0526252525"
+            }
+        ],
+        "goldtrip": [
+            {
+            "id": 1,
+            "precio": "customer001@email.com",
+            "titulo": "0526252525",
+            "descripcion_corta": "0526252525",
+            "ubicacion": "0526252525"
+            }
+        ]
+    }

@@ -1,0 +1,85 @@
+
+
+a{
+    color: white;
+    background-size: cover
+}
+
+a div{
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    text-align: center;
+    position: relative;
+    
+}
+
+a h5{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+}
+
+.Eventos, .Destinos{
+    height: 50%;
+}
+
+.Promociones{
+    background-image: url('/assets/img/beach-blue-sky-cheerful-452738.jpg');
+    height: 25%;
+    position: relative;
+    /*height: 20%;*/
+}
+.Destinos{
+    background-image: url('/assets/img/action-adventure-alps-238622.jpg');
+}
+.Eventos{
+    background-image: url('/assets/img/action-adult-battle-974320.jpg');
+}
+.LoveTrip{
+    background-image: url('/assets/img/honeymoon.gif')
+}
+
+.News{
+    background-image: url('/assets/img/mahir-uysal-303105-unsplash.jpg');
+    padding: 0;
+}
+
+.menuPrincipal{
+    height: 100%;
+}
+
+.menuPrincipal div{
+    background-size: 100% auto;
+    width: 100%;
+}
+
+/*h5::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    display: table-cell;
+    vertical-align: middle;
+    z-index: -1;
+}*/
+
+.GoldTrip{
+    
+    background-image: url(/assets/img/alex-holyoake-334210-unsplash.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: top;
+    padding: 0;
+}
+
+div{
+    color: white;
+    font-size: 15px;
+}
+
+a:active > div{
+    background: transparent;
+}

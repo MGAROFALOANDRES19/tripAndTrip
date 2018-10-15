@@ -1,0 +1,30 @@
+<app-layout>
+  <div class="row">
+
+    <div class="col-12 header-section">
+
+      <img src="/assets/img/alex-holyoake-334210-unsplash.gif" alt="test" class="img-responsive">
+
+      <div class="carousel-caption">
+        <h2>PROMOCIONES</h2>
+      </div>
+      <div>
+        <i class="toDown fas fa-caret-down"></i>
+      </div>
+    </div>
+  </div>
+<form *ngIf="(promociones && form)">
+  <input type="text">
+</form>
+  <ngb-carousel *ngIf="promociones && !form">
+    <ng-template ngbSlide *ngFor="let promocion of promociones">
+        <div class="precio"><span>${{promocion.precio}}</span><p>12 cuotas</p></div>
+      <img [src]="promocion.foto" alt="Random first slide">
+      <h4>{{promocion.titulo}}</h4>
+      <h5>{{promocion.descripcion_corta}}</h5>
+      <div class="lugar"><i class="fas fa-map-marker-alt"></i><span>  {{promocion.lugar}}</span></div>
+      <button type="button" class="btn btn-primary btn-lg btn-block" (click)="showForm(promocion.id)">Mas info</button>
+      <button type="button" class="btn btn-secondary btn-lg btn-block">Quiero viajar</button>
+    </ng-template>
+  </ngb-carousel>
+</app-layout>
