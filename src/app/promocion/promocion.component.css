@@ -63,6 +63,6 @@ h5{
     color: gray;   
 }
 
-.carousel-indicators{
-    z-index: 0;
+.btn-primary{
+    z-index: 1000;
 }

@@ -42,5 +42,7 @@ body{
 
 .carousel-indicators{
     bottom: none;
-    top: -10px
+    top: -10px;
+    z-index: 0;
 }
+

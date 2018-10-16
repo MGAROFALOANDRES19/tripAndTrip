@@ -13,9 +13,9 @@
       </div>
     </div>
   </div>
-<form *ngIf="(promociones && form)">
-  <input type="text">
-</form>
+<div *ngIf="(promociones && form)">
+  <app-formulario-contacto></app-formulario-contacto>
+</div>
   <ngb-carousel *ngIf="promociones && !form">
     <ng-template ngbSlide *ngFor="let promocion of promociones">
         <div class="precio"><span>${{promocion.precio}}</span><p>12 cuotas</p></div>
