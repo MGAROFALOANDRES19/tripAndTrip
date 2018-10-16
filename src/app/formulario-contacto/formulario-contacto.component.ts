@@ -9,7 +9,8 @@ export class FormularioContactoComponent implements OnInit {
 
   name: string;
   email: string;
-  message: string;
+  phone: string;
+  city: string;
 
   constructor() { }
 
@@ -17,7 +18,7 @@ export class FormularioContactoComponent implements OnInit {
   }
 
   processForm() {
-    const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
+    const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.phone }`;
     alert(allInfo); 
   }
 

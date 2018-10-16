@@ -5,3 +5,7 @@
 .navbar-brand{
     margin: auto;
 }
+
+.bg-dark{
+    background-color: var(--fondo-general) !important
+}

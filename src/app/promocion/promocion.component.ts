@@ -12,21 +12,21 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'
 export class PromocionComponent implements OnInit {
 
   public promocion:Promocion;
-  public promociones:Array<Promocion>;
+  public promociones:Array<Promocion> = [];
   public form:boolean;
   public promSelected:number;
 
   constructor(private _tripAndTripService:TripAndTripService, config: NgbCarouselConfig) { 
-    config.interval = 60000;
+    config.interval = 5000;
     this.form = false;
+    console.log(this.promociones.length)
   }
 
   ngOnInit() {
     this.promociones = [];
     this._tripAndTripService.getPromociones().subscribe((data: Array<Promocion>) => {
-      this.promociones = data;
-    console.log(this.promociones)
-      
+    this.promociones = data;     
+    console.log(this.promociones) 
   });
   
   }

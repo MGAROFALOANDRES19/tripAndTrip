@@ -1,0 +1,10 @@
+.col-4 > i {
+    font-size:1.8em
+}
+
+footer{
+    bottom: 0;
+    position: fixed;
+    max-height: 165px;
+    width: 100%
+}

@@ -3,19 +3,24 @@
 
   <!-- name -->
   <div class="field">
-    <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name">
+    <input type="text" name="name" class="input" placeholder="No,bre y apellido" [(ngModel)]="name">
   </div>
 
   <!-- email -->
   <div class="field">
-    <input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email">
+    <input type="email" name="email" class="input" placeholder="Email" [(ngModel)]="email">
   </div>
 
-  <!-- message -->
+  <!-- phone -->
   <div class="field">
-    <textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea>
-  </div>
-
-  <button type="submit" class="button is-danger is-large">Submit</button>
+      <input type="text" name="phone" class="input" placeholder="Teléfono" [(ngModel)]="phone">
+    </div>
+  <!-- city -->
+  <div class="field">
+      <input type="text" name="city" class="input" placeholder="Ciudad" [(ngModel)]="city">
+    </div>
+<p>Como te gustaria que nos comuniquemos</p>
+  <button type="submit" class="button is-danger is-large">Whatsapp</button>
+  <button type="submit" class="button is-danger is-large">Llamada</button>
 
 </form>

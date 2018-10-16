@@ -1,0 +1,22 @@
+.ng-untouched{
+    text-align: center;
+    width: 75%;
+    margin: auto;
+}
+
+.input{
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: gray;
+    color: white;
+    text-align: left;
+    box-shadow: none;
+}
+
+input::placeholder{
+    color: white
+}
+
+p{
+    color: white
+}
