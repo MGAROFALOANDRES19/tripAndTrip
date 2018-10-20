@@ -28,12 +28,12 @@
 
 body {
   background-color: black;
-  height: 100vh !important;
-  margin-bottom: 165px;
+  min-height: 100vh !important;
+  /*margin-bottom: 165px;*/
 }
 
 .container {
-  height: 78% !important;
+  height: 80vh !important;
 }
 
 .header-section {

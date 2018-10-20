@@ -9,3 +9,6 @@
 .bg-dark{
     background-color: var(--fondo-general) !important
 }
+
+.container{
+}

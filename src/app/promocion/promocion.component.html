@@ -1,4 +1,5 @@
 <app-layout>
+  <div class="container">
   <div class="row">
 
     <div class="col-12 header-section" *ngIf="!form">
@@ -13,7 +14,9 @@
       </div>
     </div>
   </div>
-  <div *ngIf="(promociones && form)">
+  
+  <div class="form" *ngIf="(promociones && form)">
+    <img class="img-responsive center" [src]="promociones[promSelected].foto" alt="">
     <h4>Deseamos que tu experiencia sea la mejor</h4>
     <h5>Un asesor se pondrá en contacto contigo</h5>
     <app-formulario-contacto></app-formulario-contacto>
@@ -33,4 +36,5 @@
       <button type="button" class="btn btn-secondary btn-lg btn-block">Quiero viajar</button>
     </ng-template>
   </ngb-carousel>
+</div>
 </app-layout>

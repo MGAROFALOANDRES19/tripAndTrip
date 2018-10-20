@@ -1,10 +1,15 @@
-.col-4 > i {
-    font-size:1.8em
+.col-4>i {
+  font-size: 1.8em
 }
 
-footer{
-    bottom: 0;
-    position: fixed;
-    max-height: 165px;
-    width: 100%
+footer {
+  bottom: 0;
+  max-height: 165px;
+  width: 100%;
+  background-color: var(--fondo-footer);
+  padding-top: 5%;
+}
+
+.container{
+  height: auto !important;
 }

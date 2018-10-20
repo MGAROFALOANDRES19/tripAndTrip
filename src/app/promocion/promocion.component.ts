@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Promocion } from './promocion';
-import { TripAndTripService } from '../trip-and-trip.service';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-promocion',
@@ -12,29 +13,26 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap'
 export class PromocionComponent implements OnInit {
 
   public promocion:Promocion;
-  public promociones:Array<Promocion> = [];
+  public data:Observable<any[]>;
+  public promociones: Promocion[] = [];
   public form:boolean;
   public promSelected:number;
 
-  constructor(private _tripAndTripService:TripAndTripService, config: NgbCarouselConfig) { 
+  constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase) { 
     config.interval = 5000;
-    this.form = false;
-    console.log(this.promociones.length)
+    this.form = false;    
+    this.data = this.db.list('promociones').valueChanges();    
   }
 
   ngOnInit() {
-    this.promociones = [];
-    this._tripAndTripService.getPromociones().subscribe((data: Array<Promocion>) => {
-    this.promociones = data;     
-    console.log(this.promociones) 
-  });
-  
+    this.data.subscribe((promociones) => {
+      this.promociones = promociones
+    })
   }
 
   showForm(id:number){
     this.form = true;
-    this.promSelected = id;
-    console.log(this.form)
+    this.promSelected = id-1;
   }
 
   }
