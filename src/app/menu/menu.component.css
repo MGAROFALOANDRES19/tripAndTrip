@@ -28,6 +28,7 @@ a h5{
     background-image: url('/assets/img/beach-blue-sky-cheerful-452738.jpg');
     height: 25%;
     position: relative;
+    margin-right: 0;
     /*height: 20%;*/
 }
 .Destinos{

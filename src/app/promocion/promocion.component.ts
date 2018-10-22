@@ -19,7 +19,9 @@ export class PromocionComponent implements OnInit {
   public promSelected:number;
 
   constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase) { 
-    config.interval = 5000;
+    
+    config.interval = 100000;
+
     this.form = false;    
     this.data = this.db.list('promociones').valueChanges();    
   }
