@@ -19,6 +19,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UiModule } from './ui/ui.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,11 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule, // for database
+    AngularFireDatabaseModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), // for database
   ],
   providers: [],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

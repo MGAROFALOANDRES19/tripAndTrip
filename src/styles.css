@@ -43,6 +43,10 @@ body {
   padding: 0;
 }
 
+.pequeno{
+  font-size: 1em
+
+}
 
 .header-section img {
   width: 100%;
