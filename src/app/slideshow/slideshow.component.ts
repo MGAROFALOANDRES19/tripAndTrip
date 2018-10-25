@@ -5,12 +5,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-promocion',
-  templateUrl: './promocion.component.html',
-  styleUrls: ['./promocion.component.css'],
+  selector: 'app-SlideShow',
+  templateUrl: './slideshow.component.html',
+  styleUrls: ['./slideshow.component.css'],
   providers: [NgbCarouselConfig]
 })
-export class PromocionComponent implements OnInit {
+export class SlideShowComponent implements OnInit {
 
   public promocion:Promocion;
   public data:Observable<any[]>;
