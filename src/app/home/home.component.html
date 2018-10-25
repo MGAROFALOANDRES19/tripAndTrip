@@ -1,14 +1,22 @@
-
- <a class="navbar-brand" href="#"><img src="/assets/img/logo.png" alt="logo"></a>
+<a class="navbar-brand" href="#"><img src="/assets/img/logo.png" alt="logo"></a>
 <img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">
-<div class="searcher"><h4><i class="fas fa-search"></i>QUE ESTAS BUSCANDO</h4></div>
-<button class="pequeno" [ngx-scroll-to]="'#menu'">CATEGORIAS<div>
-  <i class="toDown fas fa-caret-down"></i>
-</div></button>
+<div class="searcher" >
+  <form id="demo-2">
+      <input type="search" placeholder="Buscar">
+      <h4>QUE ESTAS BUSCANDO</h4>
+    </form>
+</div>
+<button (click)="showMenu()"  class="pequeno">CATEGORIAS<div>
+    <i class="toDown fas fa-caret-down"></i>
+  </div></button>
 <div>
-<app-layout id="menu">
-  <div class="container">
-        <app-menu></app-menu>
-      </div>
-      </app-layout>
-    </div>
+  <div id="menu" class="container" [@slide]="status">
+      <nav class="navbar">
+          <a class="navbar-brand" href="/">
+            <img src="/assets/img/logo.png" alt="Trip and Trip">
+          </a>
+        </nav>
+    <app-menu></app-menu>
+  </div>
+  <app-footer></app-footer>
+</div>
