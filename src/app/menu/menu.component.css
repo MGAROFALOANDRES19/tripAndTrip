@@ -84,3 +84,7 @@ div{
 a:active > div{
     background: transparent;
 }
+
+.menuPrincipal{
+    height: 80vh;
+}

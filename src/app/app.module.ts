@@ -8,7 +8,6 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
 import { PromocionComponent } from './promocion/promocion.component';
 import { DestinoComponent } from './destino/destino.component';
 import { EventoComponent } from './evento/evento.component';
@@ -19,15 +18,16 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './/app-routing.module';
 import { UiModule } from './ui/ui.module';
+import { MenuModule } from './menu/menu.module'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent,
     PromocionComponent,
     DestinoComponent,
     EventoComponent,
@@ -41,6 +41,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NgbModule,
     AppRoutingModule,
     UiModule,
+    MenuModule,
     HttpClientModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),

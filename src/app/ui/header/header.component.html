@@ -1,8 +1,15 @@
-<button (click)="showMenu()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <button *ngIf="status == 'left'" (click)="showMenu()" class="navbar-toggler" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
-<nav class="navbar navbar-dark bg-dark mb-5">
+  <button *ngIf="status == 'right'" type="button" (click)="showMenu()" class="close navbar-toggler" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
   <a class="navbar-brand" href="/">
     <img src="/assets/img/logo.png" alt="Trip and Trip">
   </a>
 </nav>
+<div id="menu" [@slide]="status">
+<app-menu></app-menu>
+</div>
