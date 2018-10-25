@@ -18,18 +18,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { from } from 'rxjs';
+import { RouterModule } from '@angular/router';
+import { LongDescriptionComponent } from './long-description/long-description.component';
+import { GoldtripComponent } from './goldtrip/goldtrip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SlideShowComponent,
-    FormularioContactoComponent
+    FormularioContactoComponent,
+    LongDescriptionComponent,
+    GoldtripComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     AppRoutingModule,
+    RouterModule,
     UiModule,
     MenuModule,
     HttpClientModule,

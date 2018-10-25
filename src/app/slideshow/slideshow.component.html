@@ -7,7 +7,7 @@
       <img src="/assets/img/active-adrenaline-adventure-web.gif" alt="test" class="img-responsive">
 
       <div class="carousel-caption">
-        <h2>PROMOCIONES</h2>
+        <h2>{{titulo}}</h2>
       </div>
       <div>
         <i class="toDown fas fa-caret-down"></i>
@@ -23,7 +23,7 @@
   </div>
   <ngb-carousel *ngIf="promociones.length >= 1 && !form">
     <ng-template ngbSlide *ngFor="let promocion of promociones">
-      <div class="precio"><span>${{promocion.precio}}</span>
+      <div class="precio"><span>${{promocion.precio/12 | number : '1.0-0'}}</span>
         <p>12 cuotas</p>
       </div>
       <img [src]="promocion.foto" alt={{promocion.alt}}>
@@ -32,7 +32,7 @@
         <h5>{{promocion.descripcion_corta}}</h5>
         <div class="lugar"><i class="fas fa-map-marker-alt"></i><span> {{promocion.lugar}}</span></div>
       </div>
-      <button type="button" class="btn btn-primary btn-lg btn-block" (click)="showForm(promocion.id)">Mas info</button>
+      <a class="btn btn-primary btn-lg btn-block" (click)="navigate(promocion.id)" href="/{{titulo}}/{{promocion.id}}" >Mas info</a>
       <button type="button" class="btn btn-secondary btn-lg btn-block">Quiero viajar</button>
     </ng-template>
   </ngb-carousel>

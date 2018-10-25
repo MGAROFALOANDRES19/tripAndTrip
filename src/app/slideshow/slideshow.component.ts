@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Promocion } from './promocion';
+import {TripAndTripService} from '../trip-and-trip.service';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
@@ -12,24 +14,31 @@ import { Observable } from 'rxjs';
 })
 export class SlideShowComponent implements OnInit {
 
+  public titulo:string;
   public promocion:Promocion;
   public data:Observable<any[]>;
   public promociones: Promocion[] = [];
   public form:boolean;
   public promSelected:number;
 
-  constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase) { 
+  constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase, private route: ActivatedRoute,   private service:TripAndTripService) { 
     
     config.interval = 100000;
 
     this.form = false;    
-    this.data = this.db.list('promociones').valueChanges();    
+    this.route.params.subscribe( params => {this.titulo = params.titulo} );
+    this.data = this.db.list(this.titulo).valueChanges();    
   }
 
   ngOnInit() {
+
     this.data.subscribe((promociones) => {
       this.promociones = promociones
     })
+  }
+
+  navigate(id:number){
+    this.service.setData(this.promociones);
   }
 
   showForm(id:number){
