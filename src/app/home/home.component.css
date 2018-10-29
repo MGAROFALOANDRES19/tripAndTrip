@@ -6,7 +6,7 @@ app-menu{
     padding-left: 0;
     padding-right: 0;
     position: absolute;
-    height: 81.7vh !important;
+	top: 110%;
 }
 
 .img-header{
@@ -19,12 +19,12 @@ i{
 
 .searcher{
     position: absolute;
-    top: 80%;
     width: 90%;
 background-color: rgba(130,130,0,0.6);
 margin: auto;
 left: 0;
 right: 0;
+bottom: 10%;
 }
 
 a{
@@ -56,7 +56,7 @@ object-fit: cover;
 .pequeno{
     position: absolute;
 z-index: 1000;
-top: 91%;
+bottom: 0;
 left: 0;
 right: 0;
 background-color: rgba(0,0,0,0.3);
@@ -83,10 +83,10 @@ input::-webkit-search-cancel-button {
 
 
 input[type=search] {
-	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	background: url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
 	padding: 9px 10px 9px 32px;
 	width: 55px;
-	
+	border: none;
 	-webkit-border-radius: 5em;
 	-moz-border-radius: 5em;
 	border-radius: 5em;

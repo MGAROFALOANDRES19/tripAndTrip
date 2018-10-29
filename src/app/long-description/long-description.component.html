@@ -1,3 +1,11 @@
-<p>
-  long-description works!
-</p>
+<div *ngIf="(promociones[itemSelected])">
+  <div class="container">
+    <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
+    <h4>{{promociones[itemSelected].titulo}}</h4>
+    <h3>{{promociones[itemSelected].precio}}</h3>
+    <span>{{promociones[itemSelected].descripcion_corta}}</span>
+  </div>
+  <div class="container">
+    <p>{{promociones[itemSelected].descripcion}}</p>
+  </div>
+</div>

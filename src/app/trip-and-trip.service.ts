@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-
+import { Promocion } from './slideshow/promocion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripAndTripService {
 
-  public data:any[];
+  public static data:Promocion[];
 
 	constructor(){
 	}
 
- getData() {
+ public static getData() {
     return this.data
   }
 
-setData(data:any[]) {
+public static setData(data:Promocion[]) {
     this.data = data;
   }
 	}

@@ -10,6 +10,11 @@
     background-color: var(--fondo-general) !important
 }
 
-#menu{
-   /* position: absolute;*/
+.navbar-toggler{
+    position: absolute;
+}
+
+.close{
+    left: 9%;
+    font-size: 3em;
 }

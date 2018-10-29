@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Promocion} from '../slideshow/promocion';
-import {TripAndTripService} from '../trip-and-trip.service';
+import { ActivatedRoute } from '@angular/router';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,13 +12,23 @@ import {TripAndTripService} from '../trip-and-trip.service';
 })
 export class LongDescriptionComponent implements OnInit { 
 
-  public promociones:Promocion[];
+  public data:Observable<any[]>;
+  public promociones:Promocion[] = [];
+  public titulo:string;
+  public itemSelected:number;
+  public promocion:Promocion;
 
-  constructor(  private service:TripAndTripService) { }
+  constructor(private db: AngularFireDatabase, private route: ActivatedRoute) { 
+    this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
+    this.data = this.db.list(this.titulo).valueChanges();   
+
+  }
 
   ngOnInit() {
-    this.promociones = this.service.getData();
-    console.log(this.promociones)
+    this.data.subscribe((promociones) => {
+      this.promociones = promociones
+    })
+    this.itemSelected--;
   }
 
 }
