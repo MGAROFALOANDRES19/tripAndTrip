@@ -15,25 +15,25 @@
     </div>
   </div>
   
-  <div class="form" *ngIf="(promociones && form)">
-    <img class="img-responsive center" [src]="promociones[promSelected].foto" alt="">
+  <div class="form" *ngIf="(items && form)">
+    <img class="img-responsive center" [src]="items[promSelected].foto" alt="">
     <h4>Deseamos que tu experiencia sea la mejor</h4>
     <h5>Un asesor se pondrá en contacto contigo</h5>
     <app-formulario-contacto></app-formulario-contacto>
   </div>
-  <ngb-carousel *ngIf="promociones.length >= 1 && !form">
-    <ng-template ngbSlide *ngFor="let promocion of promociones">
-      <div class="precio"><span>${{promocion.precio/12 | number : '1.0-0'}}</span>
+  <ngb-carousel *ngIf="items.length >= 1 && !form">
+    <ng-template ngbSlide *ngFor="let item of items">
+      <div class="precio"><span>${{item.precio/12 | number : '1.0-0'}}</span>
         <p>12 cuotas</p>
       </div>
-      <img [src]="promocion.foto" alt={{promocion.alt}}>
+      <img [src]="item.foto" alt={{item.alt}}>
       <div class="slider-caption">
-        <h4>{{promocion.titulo}}</h4>
-        <h5>{{promocion.descripcion_corta}}</h5>
-        <div class="lugar"><i class="fas fa-map-marker-alt"></i><span> {{promocion.lugar}}</span></div>
+        <h4>{{item.titulo}}</h4>
+        <h5>{{item.descripcion_corta}}</h5>
+        <div class="lugar"><i class="fas fa-map-marker-alt"></i><span> {{item.lugar}}</span></div>
       </div>
-      <a class="btn btn-primary btn-lg btn-block" href="/{{titulo}}/{{promocion.id}}" >Mas info</a>
-      <button type="button" class="btn btn-secondary btn-lg btn-block">Quiero viajar</button>
+      <a class="btn btn-primary btn-lg btn-block" href="/{{titulo}}/{{item.id}}" >Mas info</a>
+      <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="showForm(item.id)">Quiero viajar</button>
     </ng-template>
   </ngb-carousel>
 </div>

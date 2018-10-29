@@ -14,9 +14,8 @@ import { Observable } from 'rxjs';
 export class SlideShowComponent implements OnInit {
 
   public titulo:string;
-  public promocion:Promocion;
   public data:Observable<any[]>;
-  public promociones: Promocion[] = [];
+  public items: any[] = [];
   public form:boolean;
   public promSelected:number;
 
@@ -31,8 +30,8 @@ export class SlideShowComponent implements OnInit {
 
   ngOnInit() {
 
-    this.data.subscribe((promociones) => {
-      this.promociones = promociones
+    this.data.subscribe((data) => {
+      this.items = data
     })
   }
 
