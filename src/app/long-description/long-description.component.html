@@ -1,11 +1,17 @@
-<div *ngIf="(promociones[itemSelected])">
-  <div class="container">
-    <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
-    <h4>{{promociones[itemSelected].titulo}}</h4>
-    <h3>{{promociones[itemSelected].precio}}</h3>
-    <span>{{promociones[itemSelected].descripcion_corta}}</span>
+<app-layout>
+  <div *ngIf="(promociones[itemSelected])">
+    <div>
+      <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
+      <div class="container">
+        <h4>{{promociones[itemSelected].titulo}}</h4>
+        <h3>${{promociones[itemSelected].precio}}</h3>
+        <span>{{promociones[itemSelected].descripcion_corta}}</span>
+        <span>De 4 a 12 meses diferido</span>
+        <div class="container">
+          <p>{{promociones[itemSelected].descripcion}}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="container">
-    <p>{{promociones[itemSelected].descripcion}}</p>
-  </div>
-</div>
+  
+</app-layout>

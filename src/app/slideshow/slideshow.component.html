@@ -15,7 +15,7 @@
     </div>
   </div>
   
-  <div class="form" *ngIf="(items && form)">
+  <div id="form" class="form" *ngIf="(items && form)">
     <img class="img-responsive center" [src]="items[promSelected].foto" alt="">
     <h4>Deseamos que tu experiencia sea la mejor</h4>
     <h5>Un asesor se pondrá en contacto contigo</h5>
@@ -26,6 +26,7 @@
       <div class="precio"><span>${{item.precio/12 | number : '1.0-0'}}</span>
         <p>12 cuotas</p>
       </div>
+      <!--<img class="aditamento" src="/assets/icons/avion_corto-15.png" alt="">-->
       <img [src]="item.foto" alt={{item.alt}}>
       <div class="slider-caption">
         <h4>{{item.titulo}}</h4>

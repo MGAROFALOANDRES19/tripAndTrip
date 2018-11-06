@@ -38,6 +38,7 @@ export class SlideShowComponent implements OnInit {
   showForm(id:number){
     this.form = true;
     this.promSelected = id-1;
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
   }

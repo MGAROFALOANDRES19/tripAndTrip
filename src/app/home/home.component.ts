@@ -14,13 +14,14 @@ import {
   animations: [
     trigger('slide', [
       state('down', style({ transform: 'translateY(0%)', display:'none' })),
-      state('up', style({ transform: 'translateY(-122.8%)', display:'block' })),
+      state('up', style({ transform: 'translateY(-100%)', display:'block' })),
       transition('* => *', animate(300))
     ])]
 })
 export class HomeComponent implements OnInit {
 
   public status: string = "down";
+  public showed: boolean = false;
 
   constructor() { }
 
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   showMenu() {
+    this.showed = this.showed == true ? false : true;
     this.status = this.status === 'down' ? 'up' : 'down';
   }
 

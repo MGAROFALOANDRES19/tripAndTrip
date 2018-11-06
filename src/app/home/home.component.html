@@ -6,15 +6,16 @@
       <h4>QUE ESTAS BUSCANDO?</h4>
     </form>
 </div>
-<button (click)="showMenu()"  class="pequeno">CATEGORIAS<div>
+<button *ngIf="!showed" (click)="showMenu()"  class="pequeno">CATEGORIAS<div>
     <i class="toDown fas fa-caret-down"></i>
   </div></button>
 <div>
-  <div id="menu" class="container" [@slide]="status">
+  <div *ngIf="showed" id="menu" class="container" [@slide]="status">
       <nav class="navbar">
           <a class="navbar-brand" href="/">
             <img src="/assets/img/logo.png" alt="Trip and Trip">
           </a>
+          <i (click)="showMenu()" class="toDown fas fa-caret-down"></i>
         </nav>
     <app-menu></app-menu>
   </div>

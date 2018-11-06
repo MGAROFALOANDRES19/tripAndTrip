@@ -6,7 +6,7 @@ app-menu{
     padding-left: 0;
     padding-right: 0;
     position: absolute;
-	top: 110%;
+	top: 100%;
 }
 
 .img-header{
@@ -24,7 +24,7 @@ background-color: rgba(130,130,0,0.6);
 margin: auto;
 left: 0;
 right: 0;
-bottom: 10%;
+bottom: 15%;
 }
 
 a{

@@ -6,6 +6,10 @@
     margin: auto;
 }
 
+.navbar-brand img{
+    width: 100px;
+}
+
 .bg-dark{
     background-color: var(--fondo-general) !important
 }
