@@ -26,11 +26,12 @@
       <div class="precio"><span>${{item.precio/12 | number : '1.0-0'}}</span>
         <p>12 cuotas</p>
       </div>
-      <!--<img class="aditamento" src="/assets/icons/avion_corto-15.png" alt="">-->
+      <img class="aditamento" src="/assets/icons/interface-15.png" alt="">
       <img [src]="item.foto" alt={{item.alt}}>
       <div class="slider-caption">
         <h4>{{item.titulo}}</h4>
         <h5>{{item.descripcion_corta}}</h5>
+        <div class="lugar"><i class="fas fa-hourglass-start"></i><span> {{item.duracion}}</span></div>
         <div class="lugar"><i class="fas fa-map-marker-alt"></i><span> {{item.lugar}}</span></div>
       </div>
       <a class="btn btn-primary btn-lg btn-block" href="/{{titulo}}/{{item.id}}" >Mas info</a>

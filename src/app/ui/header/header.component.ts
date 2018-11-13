@@ -1,5 +1,4 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-
 import {
   trigger,
   state,
@@ -35,5 +34,8 @@ export class HeaderComponent implements OnInit {
     this.status = this.status === 'left' ? 'right' : 'left'; 
   }
 
+  changePage(){
+    this.status = this.status === 'left' ? 'right' : 'left'; 
+  }
 
 }

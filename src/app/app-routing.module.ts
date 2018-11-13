@@ -3,12 +3,17 @@ import { Route, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SlideShowComponent } from './slideshow/slideshow.component';
 import { LongDescriptionComponent } from './long-description/long-description.component';
+import { PageResultComponent } from './page-result/page-result.component';
+import { GoldtripComponent } from './goldtrip/goldtrip.component';
 
 
 const routes: Route[] = [
-  {path: '',        component: HomeComponent},
-  {path: ':titulo',  component: SlideShowComponent},
-  {path: ':titulo/:id',  component: LongDescriptionComponent},
+  {path: '',                    component: HomeComponent},
+  {path: 'gold-trip',            component: GoldtripComponent},
+  {path: 'busqueda/:keywords[]',component: PageResultComponent},
+  {path: ':titulo',             component: SlideShowComponent},
+  {path: ':titulo/:id',         component: LongDescriptionComponent}
+  
 ];
 
 @NgModule({

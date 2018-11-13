@@ -14,7 +14,7 @@ import {
   animations: [
     trigger('slide', [
       state('down', style({ transform: 'translateY(0%)', display:'none' })),
-      state('up', style({ transform: 'translateY(-100%)', display:'block' })),
+      state('up', style({ transform: 'translateY(-112%)', display:'block' })),
       transition('* => *', animate(300))
     ])]
 })
@@ -33,5 +33,6 @@ export class HomeComponent implements OnInit {
     this.showed = this.showed == true ? false : true;
     this.status = this.status === 'down' ? 'up' : 'down';
   }
+  
 
 }

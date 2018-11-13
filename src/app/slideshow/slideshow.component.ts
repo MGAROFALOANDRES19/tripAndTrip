@@ -14,22 +14,23 @@ import { Observable } from 'rxjs';
 export class SlideShowComponent implements OnInit {
 
   public titulo:string;
+  public tituloTmp:String = "";
   public data:Observable<any[]>;
   public items: any[] = [];
   public form:boolean;
   public promSelected:number;
 
   constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase, private route: ActivatedRoute) { 
-    
+
     config.interval = 100000;
 
     this.form = false;    
     this.route.params.subscribe( params => {this.titulo = params.titulo} );
+  
     this.data = this.db.list(this.titulo).valueChanges();    
   }
 
   ngOnInit() {
-
     this.data.subscribe((data) => {
       this.items = data
     })

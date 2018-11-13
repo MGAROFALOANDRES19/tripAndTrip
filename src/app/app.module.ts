@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -21,6 +22,7 @@ import { from } from 'rxjs';
 import { RouterModule } from '@angular/router';
 import { LongDescriptionComponent } from './long-description/long-description.component';
 import { GoldtripComponent } from './goldtrip/goldtrip.component';
+import { PageResultComponent } from './page-result/page-result.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { GoldtripComponent } from './goldtrip/goldtrip.component';
     SlideShowComponent,
     FormularioContactoComponent,
     LongDescriptionComponent,
-    GoldtripComponent
+    GoldtripComponent,
+    PageResultComponent
   ],
   imports: [
     BrowserModule,

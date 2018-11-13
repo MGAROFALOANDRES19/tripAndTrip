@@ -81,10 +81,6 @@ div{
     font-size: 15px;
 }
 
-a:active > div{
+a:focus:hover > div{
     background: transparent;
-}
-
-.menuPrincipal{
-    height: 82vh;
 }
