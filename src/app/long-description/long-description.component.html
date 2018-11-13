@@ -4,11 +4,12 @@
       <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
       <div class="container">
         <h4>{{promociones[itemSelected].titulo}}</h4>
-        <h3>${{promociones[itemSelected].precio}}</h3>
-        <span>{{promociones[itemSelected].descripcion_corta}}</span>
-        <span>De 4 a 12 meses diferido</span>
+        <h3><sup>$</sup>{{promociones[itemSelected].precio}}</h3>
+        <span class="diferido">De 4 a 12 meses diferido</span>
         <div class="container">
           <p>{{promociones[itemSelected].descripcion}}</p>
+          <span>Tags: {{promociones[itemSelected].tags.join(', ')}}.</span>
+          <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="showForm(item.id)">Quiero viajar</button>
         </div>
       </div>
     </div>

@@ -17,21 +17,6 @@ ngb-carousel *:focus {
   outline: none !important;
 }
 
-.btn-block {
-  max-width: 95%;
-  margin: auto;
-  border-radius: 0px;
-  padding: 0%;
-  margin-bottom: 5px;
-  background-color: var(--verde-oscuro);
-  border: 0px;
-  margin-top: 5px;
-}
-
-.btn-secondary {
-  background-color: var(--verde-claro);
-}
-
 .precio {
   position: absolute;
   z-index: 1000;
