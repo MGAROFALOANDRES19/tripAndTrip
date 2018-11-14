@@ -13,33 +13,46 @@ import { Observable } from 'rxjs';
 })
 export class SlideShowComponent implements OnInit {
 
-  public titulo:string;
-  public tituloTmp:String = "";
-  public data:Observable<any[]>;
+  public titulo: string;
+  public tituloTmp: String = "";
+  public data: Observable<any[]>;
   public items: any[] = [];
-  public form:boolean;
-  public promSelected:number;
+  public form: boolean;
+  public promSelected: number;
 
-  constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase, private route: ActivatedRoute) { 
+  constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase, private route: ActivatedRoute) {
 
     config.interval = 100000;
 
-    this.form = false;    
-    this.route.params.subscribe( params => {this.titulo = params.titulo} );
-  
-    this.data = this.db.list(this.titulo).valueChanges();    
+    this.form = false;
+    this.route.params.subscribe(params => { this.titulo = params.titulo });
+
+    this.callDatabase()
   }
 
   ngOnInit() {
+
+    this.route.params.subscribe(params => {
+      this.titulo = params['titulo']
+      this.callDatabase()
+      console.log(this.items)
+    });
+
+  }
+
+  callDatabase() {
+    this.items = [];
+    this.data = this.db.list(this.titulo).valueChanges();
     this.data.subscribe((data) => {
       this.items = data
     })
+
   }
 
-  showForm(id:number){
+  showForm(id: number) {
     this.form = true;
-    this.promSelected = id-1;
+    this.promSelected = id - 1;
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
-  }
+}

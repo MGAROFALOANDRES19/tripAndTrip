@@ -1,42 +1,41 @@
 <app-layout>
   <div class="container">
-  <div class="row">
+    <div class="row">
 
-    <div class="col-12 header-section" *ngIf="!form">
+      <div class="col-12 header-section" *ngIf="!form">
 
-      <img src="/assets/img/active-adrenaline-adventure-web.gif" alt="test" class="img-responsive">
+        <img src="/assets/img/active-adrenaline-adventure-web.gif" alt="test" class="img-responsive">
 
-      <div class="carousel-caption">
-        <h2>{{titulo}}</h2>
-      </div>
-      <div>
-        <i class="toDown fas fa-caret-down"></i>
+        <div class="carousel-caption">
+          <h2>{{titulo}}</h2>
+        </div>
+        <div>
+          <i class="toDown fas fa-caret-down"></i>
+        </div>
       </div>
     </div>
+    <div id="form" class="form" *ngIf="(items && form)">
+      <img class="img-responsive center" [src]="items[promSelected].foto" alt="">
+      <h4>Deseamos que tu experiencia sea la mejor</h4>
+      <h5>Un asesor se pondrá en contacto contigo</h5>
+      <app-formulario-contacto></app-formulario-contacto>
+    </div>
+    <ngb-carousel *ngIf="items.length >= 1 && !form">
+      <ng-template ngbSlide *ngFor="let item of items">
+        <div class="precio"><span>${{item.precio/12 | number : '1.0-0'}}</span>
+          <p>12 cuotas</p>
+        </div>
+        <img class="aditamento" src="/assets/icons/interface-15.png" alt="">
+        <img [src]="item.foto" alt={{item.alt}}>
+        <div class="slider-caption">
+          <h4>{{item.titulo}}</h4>
+          <h5>{{item.descripcion_corta}}</h5>
+          <div class="lugar"><i class="fas fa-hourglass-start"></i><span> {{item.duracion}}</span></div>
+          <div class="lugar"><i class="fas fa-map-marker-alt"></i><span> {{item.lugar}}</span></div>
+        </div>
+        <a class="btn btn-primary btn-lg btn-block" href="/{{titulo}}/{{item.id}}">Mas info</a>
+        <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="showForm(item.id)">Quiero viajar</button>
+      </ng-template>
+    </ngb-carousel>
   </div>
-  
-  <div id="form" class="form" *ngIf="(items && form)">
-    <img class="img-responsive center" [src]="items[promSelected].foto" alt="">
-    <h4>Deseamos que tu experiencia sea la mejor</h4>
-    <h5>Un asesor se pondrá en contacto contigo</h5>
-    <app-formulario-contacto></app-formulario-contacto>
-  </div>
-  <ngb-carousel *ngIf="items.length >= 1 && !form">
-    <ng-template ngbSlide *ngFor="let item of items">
-      <div class="precio"><span>${{item.precio/12 | number : '1.0-0'}}</span>
-        <p>12 cuotas</p>
-      </div>
-      <img class="aditamento" src="/assets/icons/interface-15.png" alt="">
-      <img [src]="item.foto" alt={{item.alt}}>
-      <div class="slider-caption">
-        <h4>{{item.titulo}}</h4>
-        <h5>{{item.descripcion_corta}}</h5>
-        <div class="lugar"><i class="fas fa-hourglass-start"></i><span> {{item.duracion}}</span></div>
-        <div class="lugar"><i class="fas fa-map-marker-alt"></i><span> {{item.lugar}}</span></div>
-      </div>
-      <a class="btn btn-primary btn-lg btn-block" href="/{{titulo}}/{{item.id}}" >Mas info</a>
-      <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="showForm(item.id)">Quiero viajar</button>
-    </ng-template>
-  </ngb-carousel>
-</div>
 </app-layout>
