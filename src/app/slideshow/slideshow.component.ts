@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Promocion } from './promocion';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { FirebaseService } from '../services/firebase.service'
 import { Observable } from 'rxjs';
 
 @Component({
@@ -15,38 +14,37 @@ export class SlideShowComponent implements OnInit {
 
   public titulo: string;
   public tituloTmp: String = "";
-  public data: Observable<any[]>;
   public items: any[] = [];
   public form: boolean;
   public promSelected: number;
+  public data: Observable<any[]>;
 
-  constructor(private config: NgbCarouselConfig, private db: AngularFireDatabase, private route: ActivatedRoute) {
+  constructor(private config: NgbCarouselConfig, private firebase: FirebaseService, private route: ActivatedRoute) {
 
     config.interval = 100000;
 
     this.form = false;
     this.route.params.subscribe(params => { this.titulo = params.titulo });
+    this.callToDatabase()
 
-    this.callDatabase()
   }
 
   ngOnInit() {
 
     this.route.params.subscribe(params => {
       this.titulo = params['titulo']
-      this.callDatabase()
-      console.log(this.items)
+      this.callToDatabase()
     });
 
   }
 
-  callDatabase() {
+  callToDatabase() {
     this.items = [];
-    this.data = this.db.list(this.titulo).valueChanges();
+    this.data = this.firebase.getItems(this.titulo);
     this.data.subscribe((data) => {
       this.items = data
+      
     })
-
   }
 
   showForm(id: number) {

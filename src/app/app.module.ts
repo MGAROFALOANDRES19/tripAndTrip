@@ -23,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { LongDescriptionComponent } from './long-description/long-description.component';
 import { GoldtripComponent } from './goldtrip/goldtrip.component';
 import { PageResultComponent } from './page-result/page-result.component';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { PageResultComponent } from './page-result/page-result.component';
     ScrollToModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent],
   
 })
