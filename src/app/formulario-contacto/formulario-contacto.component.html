@@ -1,38 +1,45 @@
 <app-layout>
 
   <div id="form" class="form" *ngIf="items.length >= 1">
-    <img class="img-responsive center" [src]="items[itemSelected].foto" alt="">
+    <div class="img-wrapper">
+      <img class="img-responsive center" [src]="items[itemSelected].foto" alt="">
+    </div>
+    <img class="aditamento" src="src/assets/icons/avion_corto-15.png" alt="Avion corto">
     <h4>Deseamos que tu experiencia sea la mejor</h4>
-    <h5>Un asesor se pondrá en contacto contigo</h5>
+    <h6 *ngIf="form" >Un asesor se pondrá en contacto contigo</h6>
   </div>
 
-<!-- form goes here -->
-<form (ngSubmit)="processForm()">
+  <!-- form goes here -->
+  <form *ngIf="form" (ngSubmit)="processForm()">
 
-  <!-- name -->
-  <div class="field">
-    <input type="text" name="name" class="input" placeholder="NOMBRE Y APELLIDO" [(ngModel)]="name">
-  </div>
-
-  <!-- email -->
-  <div class="field">
-    <input type="email" name="email" class="input" placeholder="EMAIL" [(ngModel)]="email">
-  </div>
-
-  <!-- phone -->
-  <div class="field">
-      <input type="text" name="phone" class="input" placeholder="TELÉFONO" [(ngModel)]="phone">
+    <!-- name -->
+    <div class="field">
+      <input type="text" name="name" class="input" placeholder="Nombre y apellido" [(ngModel)]="name">
     </div>
-  <!-- city -->
-  <div class="field">
-      <input type="text" name="city" class="input" placeholder="CIUDAD" [(ngModel)]="city">
-    </div>
-<p>Como te gustaria que nos comuniquemos</p>
-<div class="row">
-  <button type="submit" class="col-6 button is-danger is-large"><i class="fab fa-whatsapp-square"></i></button>
-  <button type="submit" class="col-6 button is-danger is-large"><i class="fas fa-phone-square"></i></button>
-</div>
 
-</form>
+    <!-- email -->
+    <div class="field">
+      <input type="email" name="email" class="input" placeholder="Correo" [(ngModel)]="email">
+    </div>
+
+    <!-- phone -->
+    <div class="field">
+      <input type="text" name="phone" class="input" placeholder="Teléfono" [(ngModel)]="phone">
+    </div>
+    <!-- city -->
+    <div class="field">
+      <input type="text" name="city" class="input" placeholder="Ciudad" [(ngModel)]="city">
+    </div>
+    <p>Como te gustaria que nos comuniquemos</p>
+    <div class="row">
+      <button (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/wtpp verde-15.png" alt="Whatsapp"></button>
+      <button (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/telefono verd-15.png" alt="Teléfono"></button>
+    </div>
+
+  </form>
+
+  <div *ngIf="!form">
+    <a href="/" class="btn btn-secondary btn-lg btn-block">Volver al inicio</a>
+  </div>
 
 </app-layout>

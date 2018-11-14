@@ -1,47 +1,101 @@
-.ng-untouched{
+.ng-untouched {
     text-align: center;
     width: 75%;
-    margin: auto;
+    /*margin: auto;*/
 }
 
-.input{
+.input {
     width: 100%;
     margin-bottom: 5px;
     background-color: gray;
     color: white;
     text-align: left;
     box-shadow: none;
+    border: none;
+    padding-left: 10px;
 }
 
-input::placeholder{
+input::placeholder {
     color: white
 }
 
-p{
+p {
     color: white
 }
 
-form{
+form {
     max-width: 70%;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .form {
     text-align: center
-  }
-  
-  .form img {
+}
+
+.form img {
     margin: auto;
-    max-width: 50%;
-  }
-  
-  .form h4{
+}
+
+.form h4 {
     text-align: left;
-    margin-left: 15%;
-  }
-  
-  .form h5 {
+}
+
+.form h5 {
     max-width: 80%;
     text-align: left;
+}
+
+#form {
     margin-left: 15%;
-  }
+    margin-right: 15%;
+}
+
+.img-wrapper {
+    height: 150px;
+    width: 50%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0% 0% 39% 15%;
+}
+
+.img-wrapper>img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 240px;
+    margin: 0px 0 0 0px;
+}
+
+h4 {
+    color: var(--amarillo-oscuro)
+}
+
+#form {
+    margin-bottom: 20px;
+}
+
+button {
+    max-width: 50%;
+    background: transparent;
+    border: none;
+}
+
+button img {
+    width: 45%;
+}
+
+.aditamento {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 40%;
+    height: 40px;
+    top: 180px;
+}

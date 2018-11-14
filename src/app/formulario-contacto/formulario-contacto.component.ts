@@ -18,11 +18,12 @@ export class FormularioContactoComponent implements OnInit {
   private titulo:String;
   private data:Observable<any>;
   private items:any[] = [];
+  private form:boolean;
 
   constructor( private firebase:FirebaseService, private route: ActivatedRoute ) { 
     this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
     this.data = this.firebase.getItems(this.titulo);
-
+    this.form = true;
   }
 
   ngOnInit() {
@@ -37,5 +38,8 @@ export class FormularioContactoComponent implements OnInit {
     alert(allInfo); 
   }
 
+  submit(){
+    this.form = false;
+  }
 
 }
