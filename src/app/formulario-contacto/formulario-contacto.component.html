@@ -1,3 +1,11 @@
+<app-layout>
+
+  <div id="form" class="form" *ngIf="items.length >= 1">
+    <img class="img-responsive center" [src]="items[itemSelected].foto" alt="">
+    <h4>Deseamos que tu experiencia sea la mejor</h4>
+    <h5>Un asesor se pondrá en contacto contigo</h5>
+  </div>
+
 <!-- form goes here -->
 <form (ngSubmit)="processForm()">
 
@@ -27,4 +35,4 @@
 
 </form>
 
-<button type="button" class="btn btn-secondary btn-lg btn-block" (click)="showForm(item.id)">Quiero viajar</button>
+</app-layout>

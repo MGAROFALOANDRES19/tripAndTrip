@@ -25,3 +25,23 @@ form{
     max-width: 70%;
     margin: auto;
 }
+
+.form {
+    text-align: center
+  }
+  
+  .form img {
+    margin: auto;
+    max-width: 50%;
+  }
+  
+  .form h4{
+    text-align: left;
+    margin-left: 15%;
+  }
+  
+  .form h5 {
+    max-width: 80%;
+    text-align: left;
+    margin-left: 15%;
+  }

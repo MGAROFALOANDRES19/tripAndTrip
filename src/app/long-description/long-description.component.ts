@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Promocion} from '../slideshow/promocion';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-
+import { FirebaseService } from '../services/firebase.service'
 
 @Component({
   selector: 'app-long-description',
@@ -18,9 +17,9 @@ export class LongDescriptionComponent implements OnInit {
   public itemSelected:number;
   public promocion:Promocion;
 
-  constructor(private db: AngularFireDatabase, private route: ActivatedRoute) { 
+  constructor(private firebase:FirebaseService, private route: ActivatedRoute) { 
     this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
-    this.data = this.db.list(this.titulo).valueChanges();   
+    this.data = this.firebase.getItems(this.titulo);
 
   }
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-formulario-contacto',
@@ -11,15 +14,28 @@ export class FormularioContactoComponent implements OnInit {
   email: string;
   phone: string;
   city: string;
+  private itemSelected:number;
+  private titulo:String;
+  private data:Observable<any>;
+  private items:any[] = [];
 
-  constructor() { }
+  constructor( private firebase:FirebaseService, private route: ActivatedRoute ) { 
+    this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
+    this.data = this.firebase.getItems(this.titulo);
+
+  }
 
   ngOnInit() {
+    this.data.subscribe((items) => {
+      this.items = items
+    })
+    this.itemSelected--;
   }
 
   processForm() {
     const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.phone }`;
     alert(allInfo); 
   }
+
 
 }

@@ -15,15 +15,12 @@ export class SlideShowComponent implements OnInit {
   public titulo: string;
   public tituloTmp: String = "";
   public items: any[] = [];
-  public form: boolean;
-  public promSelected: number;
   public data: Observable<any[]>;
 
   constructor(private config: NgbCarouselConfig, private firebase: FirebaseService, private route: ActivatedRoute) {
 
     config.interval = 100000;
 
-    this.form = false;
     this.route.params.subscribe(params => { this.titulo = params.titulo });
     this.callToDatabase()
 
@@ -45,12 +42,6 @@ export class SlideShowComponent implements OnInit {
       this.items = data
       
     })
-  }
-
-  showForm(id: number) {
-    this.form = true;
-    this.promSelected = id - 1;
-    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
 }
