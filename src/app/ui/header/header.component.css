@@ -26,3 +26,8 @@
 #menu{
     height: 92vh;
 }
+
+.transparent{
+    background-color: transparent !important;
+    z-index: 1000;
+}

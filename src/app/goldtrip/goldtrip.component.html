@@ -1,3 +1,21 @@
-<p>
-  goldtrip works!
-</p>
+<app-layout>
+ <ngb-carousel *ngIf="items.length >= 1">
+    <ng-template ngbSlide>
+      <img src="/assets/img/portada-gold.gif" alt="item.alt">
+      <div class="carousel-caption">
+        <h4>Experiencias de lujo</h4>
+        <h3>GOLD TRIP</h3>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide *ngFor="let item of items">
+        <img [src]="item.foto_1" alt={{item.alt}}>
+        <div class="carousel-caption gold-title">
+          <h3>{{item.titulo}}</h3>
+          <a href="#">
+              <img src="src/assets/icons/gold trip +-05.png" alt="mas">
+            </a>
+        </div>
+      </ng-template>
+  </ngb-carousel>
+ 
+</app-layout>

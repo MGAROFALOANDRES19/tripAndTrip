@@ -24,6 +24,7 @@ import { LongDescriptionComponent } from './long-description/long-description.co
 import { GoldtripComponent } from './goldtrip/goldtrip.component';
 import { PageResultComponent } from './page-result/page-result.component';
 import { FirebaseService } from './services/firebase.service';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FirebaseService } from './services/firebase.service';
     FormularioContactoComponent,
     LongDescriptionComponent,
     GoldtripComponent,
-    PageResultComponent
+    PageResultComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { FirebaseService } from './services/firebase.service';
     AngularFireDatabaseModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), // for database
     ScrollToModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],

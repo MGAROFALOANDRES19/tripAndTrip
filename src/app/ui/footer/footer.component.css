@@ -13,3 +13,8 @@ footer {
 .container{
   height: auto !important;
 }
+
+.transparent{
+  margin-top: 90vh;
+  z-index: -200;
+}

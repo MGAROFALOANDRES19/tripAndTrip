@@ -1,4 +1,5 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
   trigger,
   state,
@@ -22,12 +23,22 @@ import {
 export class HeaderComponent implements OnInit {
 
   public status:string = "left";
+  public url:String;
+  public gold:boolean = false;
 
-  constructor() { 
-    
+  constructor(private route:ActivatedRoute) { 
+
+    this.route.url.subscribe(url =>{
+      this.url = url.toString()
+ });
+
   }
 
   ngOnInit() {
+  
+    if (this.url = "gold-trip"){
+      this.gold = true;
+    }
   }
 
   showMenu(){

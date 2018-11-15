@@ -115,3 +115,25 @@ body {
 .btn-secondary {
   background-color: var(--verde-claro);
 }
+
+.img-header{
+  width: 100%;
+}
+
+app-goldtrip .carousel-item{
+  width: 100%;
+}
+
+app-goldtrip .carousel-inner, app-goldtrip .carousel-item, app-goldtrip img{
+  max-height: none !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+app-goldtrip ngb-carousel a{
+  z-index: 1000;
+}
+
+#menu{
+  z-index: 100;
+}

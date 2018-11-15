@@ -1,0 +1,36 @@
+ngb-carousel {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+}
+
+.carousel-item {
+    width: 100% !important;
+}
+
+.carousel-caption {
+    text-align: right;
+    top: 70%;
+}
+
+ngb-carousel a {
+    z-index: 1000;
+}
+
+.gold-title {
+    height: 125px;
+    width: 150px;
+    background: var(--gray-dark);
+    text-align: center;
+    top: 30%;
+    left: 47%;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.gold-title a{
+    position: absolute;
+    height: 75px;
+    left: 85px;
+}

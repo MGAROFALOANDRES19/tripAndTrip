@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  private url:string;
+  private gold:boolean = false;
+  constructor(private route:ActivatedRoute) { 
+
+    this.route.url.subscribe(url =>{
+      this.url = url.toString()
+  });
+
+  }
+
 
   ngOnInit() {
+    if (this.url == "gold-trip"){
+      this.gold=true
+    }
+
+
   }
 
 }
