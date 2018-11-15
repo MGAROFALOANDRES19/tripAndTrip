@@ -25,6 +25,7 @@ import { GoldtripComponent } from './goldtrip/goldtrip.component';
 import { PageResultComponent } from './page-result/page-result.component';
 import { FirebaseService } from './services/firebase.service';
 import { NewsComponent } from './news/news.component';
+import { LongDescGoldComponent } from './long-desc-gold/long-desc-gold.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { NewsComponent } from './news/news.component';
     GoldtripComponent,
     PageResultComponent,
     NewsComponent,
+    LongDescGoldComponent,
   ],
   imports: [
     BrowserModule,

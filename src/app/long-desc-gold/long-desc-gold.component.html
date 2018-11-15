@@ -1,0 +1,18 @@
+<app-layout>
+
+<div *ngIf="items.length >= 1">
+<h3>{{items[id].titulo}}</h3>
+
+<div class="container">
+  <h5>{{items[id].subt_1}}</h5>
+  <p>{{items[id].descripcion_1}}</p>
+  <img [src]="items[id].foto_1" alt={{items[id].alt}}>
+</div>
+<div class="container">
+  <h5>{{items[id].subt_2}}</h5>
+  <p>{{items[id].descripcion_2}}</p>
+  <img [src]="items[id].foto_2" alt={{items[id].alt}}>
+</div>
+</div>
+
+</app-layout>

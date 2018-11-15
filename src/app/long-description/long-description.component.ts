@@ -19,7 +19,12 @@ export class LongDescriptionComponent implements OnInit {
 
   constructor(private firebase:FirebaseService, private route: ActivatedRoute) { 
     this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
+    if (this.titulo != "gold-trip"){
     this.data = this.firebase.getItems(this.titulo);
+  }
+  else{
+    this.data = this.firebase.getItems("gold trip");
+  }
 
   }
 

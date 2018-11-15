@@ -1,0 +1,16 @@
+h3{
+    margin-left: 5%
+}
+
+.container{
+    margin: 0 10%;
+    width: 80%;
+}
+
+.container{
+    color: var(--amarillo-oscuro)
+}
+
+.container img{
+    width: 100%;
+}
