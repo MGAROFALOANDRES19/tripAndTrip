@@ -20,10 +20,13 @@ export class FormularioContactoComponent implements OnInit {
   private items:any[] = [];
   private form:boolean;
 
+  public destinos:boolean = false;
+
   constructor( private firebase:FirebaseService, private route: ActivatedRoute ) { 
     this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
     this.data = this.firebase.getItems(this.titulo);
     this.form = true;
+    this.urls()
   }
 
   ngOnInit() {
@@ -41,5 +44,19 @@ export class FormularioContactoComponent implements OnInit {
   submit(){
     this.form = false;
   }
+
+
+  urls(){
+    
+    if(this.titulo == "destinos"){
+      this.destinos = true
+      console.log("hola")
+    }
+
+    else{
+      this.destinos = false
+    }
+  }
+
 
 }

@@ -32,8 +32,9 @@
     </div>
     <p>Como te gustaria que nos comuniquemos</p>
     <div class="row">
-      <button (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/wtpp verde-15.png" alt="Whatsapp"></button>
-      <button (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/telefono verd-15.png" alt="Teléfono"></button>
+      <button *ngIf="!destinos" (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/wtpp verde-15.png" alt="Whatsapp"></button>
+      <button *ngIf="!destinos" (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/telefono verd-15.png" alt="Teléfono"></button>
+      <a *ngIf="destinos" href="despegar.com" class="btn btn-danger btn-lg btn-block">Shopping center ahora</a>
     </div>
 
   </form>

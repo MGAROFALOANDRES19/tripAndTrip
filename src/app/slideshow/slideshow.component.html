@@ -12,24 +12,27 @@
           <i class="toDown fas fa-caret-down"></i>
         </div>
       </div>
-      <div class="boletos">
+      <div *ngIf="destinos" class="boletos">
         <img src="src/assets/icons/comprar boletos-15.png" alt="">
         <span>Comprar boletos</span>
       </div>
     </div>
-    <img src="src/assets/icons/comprar boletos-15.png" alt="">
     <ngb-carousel *ngIf="items.length >= 1 && !form">
-
       <ng-template ngbSlide *ngFor="let item of items">
-        <a href="/{{titulo}}/{{item.id}}/contacto">
+        <div *ngIf="destinos" class="ubicacion">
+          <h3>{{item.ubicacion}}</h3>
+          <h4>{{item.sub_ubicacion}}</h4>
+        </div>
+        <a *ngIf="destinos" href="/{{titulo}}/{{item.id}}/contacto">
           <div class="boletos">
+            <img src="src/assets/icons/comprar boletos-15.png" alt="">
             <span>Comprar boletos</span>
           </div>
         </a>
-        <div class="precio"><span>${{item.precio/12 | number : '1.0-0'}}</span>
-          <p>12 cuotas</p>
-        </div>
-        <img class="aditamento" src="/assets/icons/interface-15.png" alt="">
+          <div [ngClass]="{precio_destino:destinos}" class="precio"><span>${{item.precio/12 | number : '1.0-0'}}</span>
+            <p>12 cuotas</p>
+          </div>
+          <img [ngClass]="{aditamento_destino:destinos}" class="aditamento" src="/assets/icons/interface-15.png" alt="">
         <img [src]="item.foto" alt={{item.alt}}>
         <div class="slider-caption">
           <h4>{{item.titulo}}</h4>

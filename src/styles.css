@@ -137,3 +137,8 @@ app-goldtrip ngb-carousel a{
 #menu{
   z-index: 100;
 }
+
+
+.carousel-item{
+  max-height: 90vh
+}

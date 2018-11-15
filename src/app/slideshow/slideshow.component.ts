@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FirebaseService } from '../services/firebase.service'
 import { Observable } from 'rxjs';
+import { ConditionalExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-SlideShow',
@@ -17,20 +18,23 @@ export class SlideShowComponent implements OnInit {
   public items: any[] = [];
   public data: Observable<any[]>;
 
+  public destinos:boolean = false;
+
   constructor(private config: NgbCarouselConfig, private firebase: FirebaseService, private route: ActivatedRoute) {
 
     config.interval = 100000;
 
     this.route.params.subscribe(params => { this.titulo = params.titulo });
-    this.callToDatabase()
+    this.urls();
+    this.callToDatabase();
 
   }
 
   ngOnInit() {
-
     this.route.params.subscribe(params => {
       this.titulo = params['titulo']
       this.callToDatabase()
+      this.urls()
     });
 
   }
@@ -42,6 +46,18 @@ export class SlideShowComponent implements OnInit {
       this.items = data
       
     })
+  }
+
+  urls(){
+    
+    if(this.titulo == "destinos"){
+      this.destinos = true
+      console.log("hola")
+    }
+
+    else{
+      this.destinos = false
+    }
   }
 
 }
