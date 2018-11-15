@@ -9,7 +9,7 @@
         <div class="container">
           <p>{{promociones[itemSelected].descripcion}}</p>
           <span>Tags: {{promociones[itemSelected].tags.join(', ')}}.</span>
-          <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="showForm(item.id)">Quiero viajar</button>
+          <a href="/{{titulo}}/{{promociones[itemSelected].id}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero viajar</a>
         </div>
       </div>
     </div>
