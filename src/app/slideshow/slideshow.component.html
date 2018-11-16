@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-12 header-section" *ngIf="!form">
+      <div class="col-12 header-section">
 
         <img src="/assets/img/active-adrenaline-adventure-web.gif" alt="test" class="img-responsive">
         <div class="carousel-caption">
@@ -17,7 +17,7 @@
         <span>Comprar boletos</span>
       </div>
     </div>
-    <ngb-carousel *ngIf="items.length >= 1 && !form">
+    <ngb-carousel *ngIf="items.length >= 1">
       <ng-template ngbSlide *ngFor="let item of items">
         <div *ngIf="destinos" class="ubicacion">
           <h3>{{item.ubicacion}}</h3>
@@ -33,7 +33,7 @@
             <p>12 cuotas</p>
           </div>
           <img [ngClass]="{aditamento_destino:destinos}" class="aditamento" src="/assets/icons/interface-15.png" alt="">
-        <img [src]="item.foto" alt={{item.alt}}>
+        <img class="foto" [src]="item.foto" alt={{item.alt}}>
         <div class="slider-caption">
           <h4>{{item.titulo}}</h4>
           <h5>{{item.descripcion_corta}}</h5>

@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class LongDescGoldComponent implements OnInit {
 
-  private items:any[] = []
+  items:any[] = []
   private data:Observable<any[]>;
   private id:number;
 

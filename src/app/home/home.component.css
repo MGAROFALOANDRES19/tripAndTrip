@@ -156,3 +156,24 @@ input::-webkit-input-placeholder {
 	display: initial !important;
 	transition: .2s display;
 }
+
+
+@media only screen and (min-width: 768px) {
+	.searcher{
+		width: 26%;
+    bottom: 0;
+    top: auto;
+    left: 10%;
+    right: auto;
+	}
+
+	.pequeno{
+		width: 26%;
+		left: 0;
+		right: 0;
+	}
+
+	.container{
+		max-width: none;
+	}
+}

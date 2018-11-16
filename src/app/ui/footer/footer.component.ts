@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class FooterComponent implements OnInit {
 
   private url:string;
-  private gold:boolean = false;
+  gold:boolean = false;
   constructor(private route:ActivatedRoute) { 
 
     this.route.url.subscribe(url =>{

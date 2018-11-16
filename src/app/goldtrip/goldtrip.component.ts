@@ -12,7 +12,7 @@ import { BootstrapOptions } from '@angular/core/src/application_ref';
 export class GoldtripComponent implements OnInit {
 
   private data:Observable<any>;
-  private items:any[];
+  items:any[];
 
   constructor(private config: NgbCarouselConfig, private firebase: FirebaseService) {
 

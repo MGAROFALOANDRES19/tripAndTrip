@@ -155,3 +155,42 @@ ngb-carousel .boletos{
 .precio_destino{
   top: 17%
 }
+
+@media only screen and (min-width: 768px) {
+  .container > .row{
+    width: 100%;
+    height: 90vh;
+  }
+
+  .row, .header-section .img-responsive{
+    height: 100% !important;
+  }
+
+  h2{
+    font-size: 3rem
+  }
+
+  .boletos{
+    max-width: 180px;
+    top: 25%;
+    left: 70%;
+  }
+
+  .foto{
+    border-radius: 0%;
+    height: 100%;
+  }
+
+  .aditamento_destino{
+    max-width: 30%;
+  }
+
+  .slider-caption{
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    background: var(--fondo-slider);
+    width: 30%;
+    padding: 2%;
+  }
+}

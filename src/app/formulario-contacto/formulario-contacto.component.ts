@@ -17,8 +17,8 @@ export class FormularioContactoComponent implements OnInit {
   private itemSelected:number;
   private titulo:String;
   private data:Observable<any>;
-  private items:any[] = [];
-  private form:boolean;
+  items:any[] = [];
+  form:boolean;
 
   public destinos:boolean = false;
 
