@@ -1,22 +1,66 @@
+<div class="menuPrincipalDesktop">
+  <div class="row">
+    <div class="col-9">
+      <a (click)="goTo('promociones')" class="row Promociones">
+        <div [@light]="status['promociones']">
+          <h5>PROMOCIONES</h5>
+        </div>
+      </a>
+      <div class="row" [ngStyle]="{'height':'75%', 'margin':0}">
+          <a (click)="goTo('eventos')" class="col-7 Eventos">
+            <div [@light]="status['eventos']">
+              <h5>EVENTOS</h5>
+            </div>
+          </a>
+          <a (click)="goTo('love-trip')" class="col-5 LoveTrip" [ngStyle]="{'padding':0}">
+              <div [@light]="status['love-trip']">
+                <h5>LOVE TRIP</h5>
+              </div>
+            </a>
+          <a (click)="goTo('destinos')" class="col-7 Destinos">
+            <div [@light]="status['destinos']">
+              <h5>DESTINOS</h5>
+            </div>
+          </a>
+          
+          <a (click)="goTo('news')" class="col-5 News">
+            <div [@light]="status['news']">
+              <h5>NEWS</h5>
+            </div>
+          </a>
+        </div>
+    </div>
+    <div class="col-3">
+      <a (click)="goTo('gold-trip')" class="col-12 GoldTrip">
+        <div [@light]="status['gold-trip']">
+          <h5>GOLD TRIP</h5>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
 
 <div class="menuPrincipal">
   <a (click)="goTo('promociones')" class="row Promociones">
-    <div [@light]="status['promociones']"> 
+    <div [@light]="status['promociones']">
       <h5>PROMOCIONES</h5>
     </div>
   </a>
   <div class="row" [ngStyle]="{'height':'45%', 'margin':0}">
     <div class="col-7" [ngStyle]="{'padding':0}">
-        <a (click)="goTo('eventos')" class="row Eventos">
-          <div [@light]="status['eventos']">
-            <h5>EVENTOS</h5>
-          </div>
-        </a>
-        <a (click)="goTo('destinos')" class="row Destinos">
-          <div [@light]="status['destinos']">
-            <h5>DESTINOS</h5>
-          </div>
-        </a>
+      <a (click)="goTo('eventos')" class="row Eventos">
+        <div [@light]="status['eventos']">
+          <h5>EVENTOS</h5>
+        </div>
+      </a>
+      <a (click)="goTo('destinos')" class="row Destinos">
+        <div [@light]="status['destinos']">
+          <h5>DESTINOS</h5>
+        </div>
+      </a>
     </div>
     <a (click)="goTo('gold-trip')" class="col-5 GoldTrip">
       <div [@light]="status['gold-trip']">
@@ -25,15 +69,15 @@
     </a>
   </div>
   <div class="row" [ngStyle]="{'height': '30%', 'margin-left': 0}">
-      <a (click)="goTo('love-trip')" class="col-8 LoveTrip" [ngStyle]="{'padding':0}">
-        <div [@light]="status['love-trip']">
-          <h5>LOVE TRIP</h5>
-        </div>
-      </a>
-      <a (click)="goTo('news')" class="col-4 News">
-        <div [@light]="status['news']">
-          <h5>NEWS</h5>
-        </div>
-      </a>
+    <a (click)="goTo('love-trip')" class="col-8 LoveTrip" [ngStyle]="{'padding':0}">
+      <div [@light]="status['love-trip']">
+        <h5>LOVE TRIP</h5>
+      </div>
+    </a>
+    <a (click)="goTo('news')" class="col-4 News">
+      <div [@light]="status['news']">
+        <h5>NEWS</h5>
+      </div>
+    </a>
   </div>
 </div>

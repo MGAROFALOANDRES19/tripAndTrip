@@ -46,11 +46,11 @@ a h5{
     padding: 0;
 }
 
-.menuPrincipal{
+.menuPrincipal, .menuPrincipalDesktop{
     height: 100%;
 }
 
-.menuPrincipal div{
+.menuPrincipal div, .menuPrincipalDesktop div{
     background-size: 100% auto;
     width: 100%;
 }
@@ -83,4 +83,45 @@ div{
 
 a:focus:hover > div{
     background: transparent;
+}
+
+.menuPrincipalDesktop{
+    display: none;
+}
+
+.menuPrincipal{
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .menuPrincipal{
+        display: none;
+    }
+
+    .menuPrincipalDesktop{
+        display: block
+    }
+
+    .menuPrincipalDesktop > .row{
+        height: 100%;
+    }
+
+    .menuPrincipalDesktop > .row > div{
+        padding: 0 !important;
+    }
+
+    .menuPrincipalDesktop > .row{
+        margin: auto;
+    }
+
+    .Eventos, .Destinos{
+        padding: 0
+    }
+
+    .GoldTrip{
+        position: absolute;
+        height: 100%;
+    }
+
 }
