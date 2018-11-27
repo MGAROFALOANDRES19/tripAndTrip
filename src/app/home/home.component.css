@@ -13,6 +13,12 @@ i {
 	margin: 15px;
 }
 
+.modal-body input{
+    width: 100%;
+    border-radius: 5px;
+    color: black;
+}
+
 .searcher {
 	position: absolute;
 	margin: auto;
@@ -22,7 +28,7 @@ i {
 	width: 100%;
 	background-color: var(--amarillo-oscuro);
 	padding: 10px;
-}
+}x
 
 .searcher img{
 	float: left;
