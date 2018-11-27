@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
   trigger,
   state,
@@ -14,16 +15,20 @@ import {
   animations: [
     trigger('slide', [
       state('down', style({ transform: 'translateY(0%)', display:'none' })),
-      state('up', style({ transform: 'translateY(-112%)', display:'block' })),
+      state('up', style({ transform: 'translateY(-100%)', display:'block' })),
       transition('* => *', animate(300))
-    ])]
+    ])],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class HomeComponent implements OnInit {
 
   public status: string = "down";
   public showed: boolean = false;
 
-  constructor() { }
+  constructor( config: NgbModalConfig, private modalService: NgbModal ) { 
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
   ngOnInit() {
 
@@ -32,6 +37,10 @@ export class HomeComponent implements OnInit {
   showMenu() {
     this.showed = this.showed == true ? false : true;
     this.status = this.status === 'down' ? 'up' : 'down';
+  }
+
+  open(content) {
+    this.modalService.open(content);
   }
   
 

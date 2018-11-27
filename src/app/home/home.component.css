@@ -1,5 +1,5 @@
 app-menu {
-	height: 80vh !important;
+	height: auto !important;
 }
 
 .container {
@@ -21,6 +21,14 @@ i {
 	top: 19%;
 	width: 100%;
 	background-color: var(--amarillo-oscuro);
+	padding: 10px;
+}
+
+.searcher img{
+	float: left;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .searcher h4 {
@@ -44,22 +52,28 @@ a {
 }
 
 #menu {
-	max-height: 90vh;
+	max-height: 100vh;
 }
 
 .navbar {
-	background: var(--fondo-general)
+	background: var(--fondo-general);
+	height: 11.5vh;
 }
 
 .navbar-brand {
 	position: absolute;
 	top: 5%;
 	left: 5%;
+	z-index: 100;
+
 }
 
 .img-header {
+	position: absolute;
 	height: 100vh;
+	max-height: 100vh;
 	object-fit: cover;
+	
 }
 
 .pequeno {
@@ -75,88 +89,22 @@ a {
 	border: none;
 }
 
-input {
-	outline: none;
+.boletos{
+	position: absolute;
+    bottom: 0;
+    width: 40%;
+    right: 5%;
 }
 
-input[type=search] {
-	-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
-	font-family: inherit;
-	font-size: 100%;
+.boletos img {
+    width: 100%;
 }
 
-input::-webkit-search-decoration, input::-webkit-search-cancel-button {
-	display: none;
+.home_footer{
+	position: absolute;
+	width: 100%;
+	margin-top: 100vh;
 }
-
-input[type=search] {
-	background: url(/assets/icons/lupa-15.png) no-repeat 9px center;
-	padding: 9px 10px 9px 32px;
-	width: 55px;
-	border: none;
-	-webkit-border-radius: 5em;
-	-moz-border-radius: 5em;
-	border-radius: 5em;
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
-}
-
-input[type=search]:focus {
-	width: 130px;
-	background-color: #fff;
-	-webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-	-moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-	box-shadow: 0 0 5px rgba(109, 207, 246, .5);
-}
-
-input:-moz-placeholder {
-	color: #999;
-}
-
-input::-webkit-input-placeholder {
-	color: #999;
-}
-
-/* Demo 2 */
-
-#demo-2 input[type=search] {
-	width: 15px;
-	padding-left: 10px;
-	color: transparent;
-	cursor: pointer;
-}
-
-#demo-2 input[type=search]:hover {
-	background-color: #fff;
-}
-
-#demo-2 input[type=search]:focus {
-	width: 85%;
-	padding-left: 32px;
-	color: #000;
-	background-color: #fff;
-	cursor: auto;
-}
-
-#demo-2>input[type=search]:focus+#demo-2>h4 {
-	display: none !important;
-}
-
-#demo-2 input:-moz-placeholder {
-	color: transparent;
-}
-
-#demo-2 input::-webkit-input-placeholder {
-	color: transparent;
-}
-
-#demo-2 h4 {
-	display: initial !important;
-	transition: .2s display;
-}
-
 
 @media only screen and (min-width: 768px) {
 	.searcher{

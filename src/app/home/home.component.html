@@ -1,24 +1,43 @@
 <a class="navbar-brand" href="#"><img src="/assets/img/logo.png" alt="logo"></a>
 <img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">
-<div class="searcher" >
-  <form id="demo-2">
-      <input type="search" placeholder="Buscar">
-      <h4>QUE ESTAS BUSCANDO?</h4>
-      <p>Keywords: Familia, playa, mascotas, pareja, etc.</p>
-    </form>
+<div class="searcher" (click)="open(content)">
+    <img src="/assets/icons/lupa-15.png" alt="">
+    <h4>QUE ESTAS BUSCANDO?</h4>
+    <p>Keywords: Familia, playa, mascotas, pareja, etc.</p>
 </div>
-<button *ngIf="!showed" (click)="showMenu()"  class="pequeno">CATEGORIAS<div>
+<button *ngIf="!showed" (click)="showMenu()" class="pequeno">CATEGORIAS<div>
     <i class="toDown fas fa-caret-down"></i>
   </div></button>
+<div class="boletos">
+  <img src="/assets/icons/despegar-inicio-movil.png" alt="Despegar.com">
+</div>
 <div>
-  <div *ngIf="showed" id="menu" class="container" [@slide]="status">
-      <nav class="navbar">
-          <a class="navbar-brand" href="/">
-            <img src="/assets/img/logo.png" alt="Trip and Trip">
-          </a>
-          <i (click)="showMenu()" class="toDown fas fa-caret-down"></i>
-        </nav>
+
+  <div (click)="showMenu()" *ngIf="showed" id="menu" class="container" [@slide]="status">
+    <nav class="navbar">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/icons/logo.png" alt="Trip and Trip">
+      </a>
+      <i class="toDown fas fa-caret-down"></i>
+    </nav>
     <app-menu></app-menu>
   </div>
-  <app-footer></app-footer>
+  <div class="home_footer">
+    <app-footer></app-footer>
+  </div>
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Hello, World!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+  </div>
+</ng-template>

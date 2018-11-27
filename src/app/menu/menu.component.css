@@ -25,29 +25,29 @@ a h5{
 }
 
 .Promociones{
-    background-image: url('/assets/img/beach-blue-sky-cheerful-452738.jpg');
+    background-image: url('/assets/img/promociones.gif');
     height: 25%;
     position: relative;
     margin-right: 0;
     /*height: 20%;*/
 }
 .Destinos{
-    background-image: url('/assets/img/action-adventure-alps-238622.jpg');
+    background-image: url('/assets/img/DESTINOS.gif');
 }
 .Eventos{
-    background-image: url('/assets/img/action-adult-battle-974320.jpg');
+    background-image: url('/assets/img/EVENTOS.gif');
 }
 .LoveTrip{
-    background-image: url('/assets/img/honeymoon.gif')
+    background-image: url('/assets/img/love-trip.gif')
 }
 
 .News{
-    background-image: url('/assets/img/mahir-uysal-303105-unsplash.jpg');
+    background-image: url('/assets/img/NOTICIAS.gif');
     padding: 0;
 }
 
 .menuPrincipal, .menuPrincipalDesktop{
-    height: 100%;
+    height: 88.5vh;
 }
 
 .menuPrincipal div, .menuPrincipalDesktop div{

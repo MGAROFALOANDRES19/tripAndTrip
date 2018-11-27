@@ -47,6 +47,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
 
+    window.onload = function(){
+      console.log("yes")
+    }
 
   }
 
