@@ -15,4 +15,6 @@ export class FirebaseService {
     this.data = this.db.list(tabla).valueChanges();
     return this.data
   }
+
+
 }

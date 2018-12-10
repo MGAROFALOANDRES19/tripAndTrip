@@ -1,0 +1,55 @@
+.modal-body input {
+	width: 100%;
+	border-radius: 5px;
+	color: black;
+}
+
+.items {
+	display: block;
+	margin-bottom: 4px;
+	background: transparent;
+	border: 1px solid var(--amarillo-claro);
+	color: var(--amarillo-oscuro);
+}
+
+.searcher {
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 19%;
+	width: 100%;
+	background-color: var(--amarillo-oscuro);
+	padding: 10px;
+}
+
+img.search-img {
+	float: left;
+	margin-right: 8px;
+	margin-top: 5px;
+	vertical-align: middle;
+}
+
+.searcher h4 {
+	margin-bottom: 8px;
+}
+
+.searcher p {
+	margin-left: 10%;
+	margin-top: -10px;
+}
+
+ul{
+	height: 150px;
+	overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+	.searcher {
+		width: 26%;
+		bottom: 0;
+		top: auto;
+		left: 10%;
+		right: auto;
+	}
+}

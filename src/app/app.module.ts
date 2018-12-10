@@ -6,6 +6,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -26,6 +27,7 @@ import { PageResultComponent } from './page-result/page-result.component';
 import { FirebaseService } from './services/firebase.service';
 import { NewsComponent } from './news/news.component';
 import { LongDescGoldComponent } from './long-desc-gold/long-desc-gold.component';
+import { SearcherComponent } from './searcher/searcher.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { LongDescGoldComponent } from './long-desc-gold/long-desc-gold.component
     PageResultComponent,
     NewsComponent,
     LongDescGoldComponent,
+    SearcherComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { LongDescGoldComponent } from './long-desc-gold/long-desc-gold.component
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), // for database
     ScrollToModule.forRoot(),
     BrowserAnimationsModule,
+    FilterPipeModule,
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],

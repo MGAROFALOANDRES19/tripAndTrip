@@ -13,38 +13,6 @@ i {
 	margin: 15px;
 }
 
-.modal-body input{
-    width: 100%;
-    border-radius: 5px;
-    color: black;
-}
-
-.searcher {
-	position: absolute;
-	margin: auto;
-	left: 0;
-	right: 0;
-	top: 19%;
-	width: 100%;
-	background-color: var(--amarillo-oscuro);
-	padding: 10px;
-}x
-
-.searcher img{
-	float: left;
-    vertical-align: middle;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.searcher h4 {
-	margin-bottom: 0
-}
-
-.searcher p {
-	margin-left: 10%;
-	margin-top: -10px;
-}
 
 a {
 	color: white;
@@ -71,7 +39,6 @@ a {
 	top: 5%;
 	left: 5%;
 	z-index: 100;
-
 }
 
 .img-header {
@@ -79,7 +46,6 @@ a {
 	height: 100vh;
 	max-height: 100vh;
 	object-fit: cover;
-	
 }
 
 .pequeno {
@@ -95,39 +61,37 @@ a {
 	border: none;
 }
 
-.boletos{
+.boletos {
 	position: absolute;
-    bottom: 0;
-    width: 40%;
-    right: 5%;
+	bottom: 0;
+	width: 40%;
+	right: 5%;
 }
 
 .boletos img {
-    width: 100%;
+	width: 100%;
 }
 
-.home_footer{
+.home_footer {
 	position: absolute;
 	width: 100%;
 	margin-top: 100vh;
 }
 
 @media only screen and (min-width: 768px) {
-	.searcher{
+	.searcher {
 		width: 26%;
-    bottom: 0;
-    top: auto;
-    left: 10%;
-    right: auto;
+		bottom: 0;
+		top: auto;
+		left: 10%;
+		right: auto;
 	}
-
-	.pequeno{
+	.pequeno {
 		width: 26%;
 		left: 0;
 		right: 0;
 	}
-
-	.container{
+	.container {
 		max-width: none;
 	}
 }

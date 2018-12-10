@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs';
+import { FirebaseService } from '../services/firebase.service'
+import { Observable, from } from 'rxjs';
 import { Promocion } from '../slideshow/promocion';
 
 @Component({
@@ -17,21 +17,51 @@ export class PageResultComponent implements OnInit {
   public goldenTrip: Observable<any[]>;
   public loveTrip: Observable<any[]>;
 
-  public keywords:string[];
+  public keyword: String;
+  public items: any[] = [];
+  public itemsFounds: any[] = []
+  public data: Observable<any[]>;
 
-  constructor(private db: AngularFireDatabase, private route: ActivatedRoute) {
+  constructor(private firebase: FirebaseService, private route: ActivatedRoute) {
 
-    this.route.params.subscribe(params => { this.keywords = params.getAll('keywords') });
-    console.log(this.keywords);
+    this.route.params.subscribe(params => { this.keyword = params.keyword });
+    this.callToDatabase('promociones');
+    this.callToDatabase('eventos');
+    this.callToDatabase('destinos');
+    this.callToDatabase('love trip');
+    this.callToDatabase('gold trip');
   }
 
   ngOnInit() {
-    this.filterSearch()
+
   }
 
-  public filterSearch(): void {
-  
-    console.log("HOLA" + this.promociones);
+  callToDatabase(type:String) {
+    this.items = [];
+
+    this.data = this.firebase.getItems(type);
+    this.data.subscribe((data) => {
+      this.items = data
+      this.find(this.keyword, type);
+
+    })
+
+  }
+
+  find(keyword: String, type: String) {
+    for (let item of this.items) {
+      try {
+        for (let tag of item['tags']) {
+          if (tag == keyword) {
+            item.type = type
+            this.itemsFounds.push(item)
+          }
+        }
+      }
+      catch (e) {
+        console.log(e)
+      }
+    }
   }
 
 }

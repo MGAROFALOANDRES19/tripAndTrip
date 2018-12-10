@@ -39,9 +39,4 @@ export class HomeComponent implements OnInit {
     this.status = this.status === 'down' ? 'up' : 'down';
   }
 
-  open(content) {
-    this.modalService.open(content);
-  }
-  
-
 }

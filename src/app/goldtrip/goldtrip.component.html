@@ -4,13 +4,14 @@
       <img src="/assets/img/portada-gold.gif" alt="item.alt">
       <div class="carousel-caption">
         <h4>Experiencias de lujo</h4>
-        <h3>GOLD TRIP</h3>
+        <h3>GOLD TRIP<i class="fas fa-angle-right"></i></h3>
       </div>
     </ng-template>
     <ng-template ngbSlide *ngFor="let item of items">
         <img [src]="item.foto_1" alt={{item.alt}}>
         <div class="carousel-caption gold-title">
           <h3>{{item.titulo}}</h3>
+          <div class="line"></div>
           <a href="/gold-trip/{{item.id}}">
               <img src="src/assets/icons/gold trip +-05.png" alt="mas">
             </a>
@@ -18,4 +19,4 @@
       </ng-template>
   </ngb-carousel>
  
-</app-layout>
+</app-layout>   

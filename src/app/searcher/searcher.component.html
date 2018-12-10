@@ -1,0 +1,21 @@
+<div class="searcher" (click)="open(content)">
+    <img class="search-img" src="/assets/icons/lupa-15.png" alt="">
+    <h4>QUE ESTAS BUSCANDO?</h4>
+    <p>Keywords: Familia, playa, mascotas, pareja, etc.</p>
+</div>
+<ng-template #content let-c="close" let-d="dismiss">
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Busca por palabra</h4>
+  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <input type="text" placeholder="Ej: Familia" [(ngModel)]="itemFilter">
+</div>
+<ul>
+  <button (click)="c('Save click')" *ngFor="let item of items | filterBy: itemFilter" class="items" (click)="addToSearch(item)">{{
+    item }}</button>
+  <li *ngIf="(items | filterBy: itemFilter).length === 0">Sin resultados</li>
+</ul>
+</ng-template>

@@ -1,5 +1,32 @@
-<ul>
-  <li *ngFor="let promocion of promociones | async">
-      <pre>{{ promocion | json }}</pre>
-  </li>
-</ul>
+<app-layout>
+  <div class="container">
+    <div class="mb20">
+      <h1>Resultados</h1>
+      <h2 class="lead"><strong class="text-danger">{{itemsFounds.length}}</strong> resultado(s) encontrado(s) de
+        <strong class="text-danger">{{keyword}}</strong></h2>
+    </div>
+
+    <section class="col-xs-12 col-sm-6 col-md-12">
+      <article *ngFor="let item of itemsFounds" class="search-result row">
+        <a href="/{{item.type}}/{{item.id}}" title={{item.type}} class="thumbnail">
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <img [src]="item.foto" alt={{item.alt}} />
+          </div>
+        </a>
+        <div class="col-xs-12 col-sm-12 col-md-2">
+          <ul class="meta-search">
+            <li><i class="fas fa-map-marker-alt"></i> <span>{{item.lugar}}</span></li>
+            <li><i class="fas fa-hourglass-start"></i> <span>{{item.duracion}}</span></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+          <h3><a href="/{{item.type}}/{{item.id}}" title="">{{item.titulo}}</a></h3>
+          <p>{{item.descripcion_corta}}</p>
+          <span class="plus"><a href="/{{item.type}}/{{item.id}}" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+        </div>
+        <span class="clearfix borda"></span>
+      </article>
+
+    </section>
+  </div>
+</app-layout>

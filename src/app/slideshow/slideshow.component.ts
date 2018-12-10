@@ -13,6 +13,8 @@ import { ConditionalExpr } from '@angular/compiler';
 })
 export class SlideShowComponent implements OnInit {
 
+  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+
   public titulo: string;
   public tituloTmp: String = "";
   public items: any[] = [];
@@ -59,5 +61,20 @@ export class SlideShowComponent implements OnInit {
       this.destinos = false
     }
   }
+
+  swipe(currentIndex: number, action = this.SWIPE_ACTION.RIGHT) {
+
+    // swipe right, next avatar
+    if (action === this.SWIPE_ACTION.RIGHT) {
+console.log("right")    }
+
+    // swipe left, previous avatar
+    if (action === this.SWIPE_ACTION.LEFT) {
+        console.log("left")
+    }
+
+    // toggle avatar visibility
+    //this.avatars.forEach((x, i) => x.visible = (i === nextIndex));
+}
 
 }

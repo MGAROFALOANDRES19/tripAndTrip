@@ -18,7 +18,7 @@
       </div>
     </div>
     <ngb-carousel *ngIf="items.length >= 1">
-      <ng-template ngbSlide *ngFor="let item of items">
+      <ng-template ngbSlide *ngFor="let item of items" (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)">
         <div *ngIf="destinos" class="ubicacion">
           <h3>{{item.ubicacion}}</h3>
           <h4>{{item.sub_ubicacion}}</h4>
