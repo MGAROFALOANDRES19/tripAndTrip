@@ -28,3 +28,16 @@ span{
     padding-top: 15px;
     margin-top: 10px;
 }
+
+.download{
+    position: absolute;
+    right: 20px;
+    margin-top: 45px;
+}
+
+.download i{
+    width: 100%;
+    font-size: 2em;
+    color: var(--amarillo-oscuro);
+    margin-bottom: 20px;
+}

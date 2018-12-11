@@ -17,6 +17,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UiModule } from './ui/ui.module';
 import { MenuModule } from './menu/menu.module'
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { from } from 'rxjs';
@@ -28,6 +29,7 @@ import { FirebaseService } from './services/firebase.service';
 import { NewsComponent } from './news/news.component';
 import { LongDescGoldComponent } from './long-desc-gold/long-desc-gold.component';
 import { SearcherComponent } from './searcher/searcher.component';
+import { ShareButtonsModule } from '@ngx-share/buttons';
 
 @NgModule({
   declarations: [
@@ -57,9 +59,12 @@ import { SearcherComponent } from './searcher/searcher.component';
     ScrollToModule.forRoot(),
     BrowserAnimationsModule,
     FilterPipeModule,
+    HttpClientJsonpModule,  // (Optional) Add if you want tumblr share counts
+    ShareButtonsModule.forRoot()
+
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent],
-  
+
 })
 export class AppModule { }

@@ -17,8 +17,9 @@
         <span>Comprar boletos</span>
       </div>
     </div>
-    <ngb-carousel *ngIf="items.length >= 1">
-      <ng-template ngbSlide *ngFor="let item of items" (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)">
+    <ngb-carousel *ngIf="items.length >= 1"
+        (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+      <ng-template ngbSlide  class="swipe" *ngFor="let item of items" >
         <div *ngIf="destinos" class="ubicacion">
           <h3>{{item.ubicacion}}</h3>
           <h4>{{item.sub_ubicacion}}</h4>

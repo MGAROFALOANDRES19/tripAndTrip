@@ -3,6 +3,11 @@
     <div>
       <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
       <div class="container">
+          <share-buttons></share-buttons>
+        <div class="download">
+            <a target="_blank" href="/assets/pdf/Curriculum%20Vitae%20-%20Marco%20Andres%20Garófalo%20Cervantes.pdf"><i class="fas fa-file-pdf"></i></a>
+            <i class="fas fa-share-alt"></i>
+        </div>
         <h4>{{promociones[itemSelected].titulo}}</h4>
         <h3><sup>$</sup>{{promociones[itemSelected].precio}}</h3>
         <span class="diferido">De 4 a 12 meses diferido</span>

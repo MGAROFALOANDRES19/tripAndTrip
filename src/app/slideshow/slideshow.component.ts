@@ -20,7 +20,7 @@ export class SlideShowComponent implements OnInit {
   public items: any[] = [];
   public data: Observable<any[]>;
 
-  public destinos:boolean = false;
+  public destinos: boolean = false;
 
   constructor(private config: NgbCarouselConfig, private firebase: FirebaseService, private route: ActivatedRoute) {
 
@@ -46,35 +46,44 @@ export class SlideShowComponent implements OnInit {
     this.data = this.firebase.getItems(this.titulo);
     this.data.subscribe((data) => {
       this.items = data
-      
+
     })
   }
 
-  urls(){
-    
-    if(this.titulo == "destinos"){
+  urls() {
+
+    if (this.titulo == "destinos") {
       this.destinos = true
       console.log("hola")
     }
 
-    else{
+    else {
       this.destinos = false
     }
   }
 
-  swipe(currentIndex: number, action = this.SWIPE_ACTION.RIGHT) {
+  swipe(action = this.SWIPE_ACTION.RIGHT) {
 
     // swipe right, next avatar
     if (action === this.SWIPE_ACTION.RIGHT) {
-console.log("right")    }
+      let element= document.getElementsByClassName("carousel-control-prev");
+      for (let i = 0; i < element.length; i++) {
+        let el = element[i];
+        var c = (element[i] as HTMLElement).click();
+    }
+    }
 
     // swipe left, previous avatar
     if (action === this.SWIPE_ACTION.LEFT) {
-        console.log("left")
+      let element= document.getElementsByClassName("carousel-control-next");
+      for (let i = 0; i < element.length; i++) {
+        let el = element[i];
+        var c = (element[i] as HTMLElement).click();
+    }
     }
 
     // toggle avatar visibility
     //this.avatars.forEach((x, i) => x.visible = (i === nextIndex));
-}
+  }
 
 }

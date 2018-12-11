@@ -10,12 +10,13 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
 
 const routes: Route[] = [
   {path: '',                    component: HomeComponent},
-  {path: ':titulo/:id/contacto',component: FormularioContactoComponent},
   {path: 'gold-trip',           component: GoldtripComponent},
   {path: 'gold-trip/:id',        component: LongDescGoldComponent},
-  {path: 'busqueda/:keyword',component: PageResultComponent},
+  {path: 'busqueda/:keyword',   component: PageResultComponent},
   {path: ':titulo',             component: SlideShowComponent},
-  {path: ':titulo/:id',         component: LongDescriptionComponent}
+  {path: ':titulo/:id',         component: LongDescriptionComponent},
+  {path: ':titulo/:id/contacto',component: FormularioContactoComponent}
+
 ];
 
 @NgModule({
