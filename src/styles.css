@@ -12,7 +12,6 @@
   --verde-oscuro: #05442C;
   --amarillo-claro: #F3C105;
   --amarillo-oscuro: #806415;
-  --amarillo-oscuro: #806415;
   --gold-trip: #AC8509;
   --fondo-general: #000;
   --precios: #BA1543;
@@ -146,4 +145,11 @@ app-goldtrip ngb-carousel a{
 
 .carousel-item{
   max-height: 90vh
+}
+
+@media only screen and (min-width: 768px) {
+  .carousel-control-prev span, .carousel-control-next span{
+    position: absolute;
+    top: 0;
+  }
 }

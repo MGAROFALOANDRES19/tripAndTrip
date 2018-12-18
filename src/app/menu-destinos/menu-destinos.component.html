@@ -1,3 +1,48 @@
+<app-layout>
+<div class="menuDestinos">
+<div class="row">
+  <div class="col-5">
+        <a (click)="goTo('caribe')" class="row caribe">
+          <div [@light]="status['caribe']">
+            <h5>CARIBE</h5>
+          </div>
+        </a>
+    <div class="row america">
+        <a (click)="goTo('norteAmerica')" class="col-4 norteAmerica">
+          <div [@light]="status['norteAmerica']">
+            <h5>NORTE AMÉRICA</h5>
+          </div>
+        </a>
+        <a (click)="goTo('centroAmerica')" class="col-4 centroAmerica">
+          <div [@light]="status['centroAmerica']">
+            <h5>CENTRO AMÉRICA</h5>
+          </div>
+        </a>
+        <a (click)="goTo('surAmerica')" class="col-4 surAmerica">
+          <div [@light]="status['surAmerica']">
+            <h5>SUR AMÉRICA</h5>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div class="col-7">
+    <div class="row">
+          <a (click)="goTo('europa')" class="col-6 europa">
+            <div [@light]="status['europa']">
+              <h5>EUROPA</h5>
+            </div>
+          </a>
+          <a (click)="goTo('restoMundo')" class="col-6 restoMundo">
+            <div [@light]="status['restoMundo']">
+              <h5>RESTO DEL MUNDO</h5>
+            </div>
+          </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--
 <div class="menuPrincipalDesktop">
   <div class="row">
     <div class="col-9">
@@ -41,43 +86,4 @@
   </div>
 </div>
 
-
-
-<div class="menuPrincipal">
-  <a (click)="goTo('promociones')" class="row Promociones">
-    <div [@light]="status['promociones']">
-      <h5>PROMOCIONES</h5>
-    </div>
-  </a>
-  <div class="row" [ngStyle]="{'height':'45%', 'margin':0}">
-    <div class="col-7" [ngStyle]="{'padding':0}">
-      <a (click)="goTo('eventos')" class="row Eventos">
-        <div [@light]="status['eventos']">
-          <h5>EVENTOS</h5>
-        </div>
-      </a>
-      <a (click)="goTo('destinos')" class="row Destinos">
-        <div [@light]="status['destinos']">
-          <h5>DESTINOS</h5>
-        </div>
-      </a>
-    </div>
-    <a (click)="goTo('gold-trip')" class="col-5 GoldTrip">
-      <div [@light]="status['gold-trip']">
-        <h5>GOLD TRIP</h5>
-      </div>
-    </a>
-  </div>
-  <div class="row" [ngStyle]="{'height': '30%', 'margin-left': 0}">
-    <a (click)="goTo('love-trip')" class="col-8 LoveTrip" [ngStyle]="{'padding':0}">
-      <div [@light]="status['love-trip']">
-        <h5>LOVE TRIP</h5>
-      </div>
-    </a>
-    <a (click)="goTo('news')" class="col-4 News">
-      <div [@light]="status['news']">
-        <h5>NEWS</h5>
-      </div>
-    </a>
-  </div>
-</div>
+-->

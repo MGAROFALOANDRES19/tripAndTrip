@@ -22,6 +22,10 @@ a h5{
 
 .Eventos, .Destinos{
     height: 50%;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+
 }
 
 .Promociones{
@@ -29,20 +33,39 @@ a h5{
     height: 25%;
     position: relative;
     margin-right: 0;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
     /*height: 20%;*/
 }
 .Destinos{
     background-image: url('/assets/img/DESTINOS.gif');
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+
 }
 .Eventos{
     background-image: url('/assets/img/EVENTOS.gif');
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+
 }
 .LoveTrip{
-    background-image: url('/assets/img/love-trip.gif')
+    background-image: url('/assets/img/love-trip.gif');
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+
 }
 
 .News{
     background-image: url('/assets/img/NOTICIAS.gif');
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+
     padding: 0;
 }
 
@@ -93,6 +116,31 @@ a:focus:hover > div{
     display: block;
 }
 
+.Promociones > div:hover, .Eventos > div:hover, .LoveTrip > div:hover, .Destinos > div:hover, .News > div:hover, .GoldTrip > div:hover{
+    background: transparent !important;
+}
+
+.hvr-glow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+  }
+  .hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+    box-shadow: 0 0 8px rgba(234, 190, 63, 0.6);
+  }
+
+  .hvr-glow:hover h5, .hvr-glow:focus h5, .hvr-glow:active h5{
+    color: rgb(234, 190, 63);
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+
 @media only screen and (min-width: 768px) {
 
     .menuPrincipal{
@@ -122,6 +170,26 @@ a:focus:hover > div{
     .GoldTrip{
         position: absolute;
         height: 100%;
+    }
+
+    .row h5{
+        font-size: 2em;
+    }
+
+    .menuPrincipalDesktop a{
+        border: 3px solid black;
+    }
+
+    .LoveTrip{
+        height: 55%;
+    }
+
+    .Destinos{
+        margin-top: -2.7%;
+    }
+
+    .News{
+        height: 45%;
     }
 
 }

@@ -1,4 +1,4 @@
-<a class="navbar-brand" href="#"><img src="/assets/icons/logo.png" alt="logo"></a>
+<a class="navbar-brand home-logo" href="#"><img src="/assets/icons/logo.png" alt="logo"></a>
 <img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">
 <app-searcher></app-searcher>
 <button *ngIf="!showed" (click)="showMenu()" class="pequeno">CATEGORIAS<div>
@@ -7,6 +7,7 @@
 <div class="boletos">
   <img src="/assets/icons/despegar-inicio-movil.png" alt="Despegar.com">
 </div>
+<div class="ofertas"> <div>Ofertas</div> <h3>BOLETOS Y HOSPEDAJE AHORA</h3></div>
 <div>
 
   <div (click)="showMenu()" *ngIf="showed" id="menu" class="container" [@slide]="status">

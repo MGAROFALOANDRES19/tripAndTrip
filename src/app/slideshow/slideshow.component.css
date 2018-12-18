@@ -156,6 +156,7 @@ ngb-carousel .boletos{
   top: 17%
 }
 
+
 @media only screen and (min-width: 768px) {
   .container > .row{
     width: 100%;
@@ -193,4 +194,47 @@ ngb-carousel .boletos{
     width: 30%;
     padding: 2%;
   }
+
+  .header-section{
+    display: none;
+  }
+
+  .foto{
+    height: 510px;
+    object-fit: cover;
+  }
+
+  .slider-caption{
+    height: auto;
+    z-index: 1;
+    padding-bottom: 90px;
+    top: 35%;
+  }
+
+  .btn-primary, .btn-secondary{
+    width: 28%;
+    left: 1%;
+    float: left;
+    z-index: 2000000;
+    position: absolute;
+  }
+
+  .btn-primary{
+    top: 83%
+  }
+
+  .btn-secondary{
+    top: 90%
+  }
+
+  .container{
+    display: inline;
+  }
+
+  ngb-carousel{
+    margin-bottom: 5%
+  }
+
+  .aditamento{display: none}
+
 }

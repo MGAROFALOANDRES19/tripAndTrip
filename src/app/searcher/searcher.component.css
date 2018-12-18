@@ -46,10 +46,27 @@ ul{
 
 @media only screen and (min-width: 768px) {
 	.searcher {
-		width: 26%;
 		bottom: 0;
 		top: auto;
-		left: 10%;
 		right: auto;
+		background-color: rgba(128,100,21, 0.6);
+		width: 28%;
+		left: 5%;
+		
 	}
+
+	.searcher h4{
+		float: left;
+		border-bottom: 1px solid white;
+		padding-bottom: 8px;
+		margin-bottom: 5px;
+	}
+
+	.searcher p{
+		display: inline-block;
+    margin-left: 7%;
+    margin-bottom: 0;
+	}
+
+
 }

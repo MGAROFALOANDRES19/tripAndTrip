@@ -30,6 +30,7 @@ import { NewsComponent } from './news/news.component';
 import { LongDescGoldComponent } from './long-desc-gold/long-desc-gold.component';
 import { SearcherComponent } from './searcher/searcher.component';
 import { ShareButtonsModule } from '@ngx-share/buttons';
+import { MenuDestinosComponent } from './menu-destinos/menu-destinos.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
     NewsComponent,
     LongDescGoldComponent,
     SearcherComponent,
+    MenuDestinosComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,7 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
     BrowserAnimationsModule,
     FilterPipeModule,
     HttpClientJsonpModule,  // (Optional) Add if you want tumblr share counts
-    ShareButtonsModule.forRoot()
+    ShareButtonsModule //revisar
 
   ],
   providers: [FirebaseService],
