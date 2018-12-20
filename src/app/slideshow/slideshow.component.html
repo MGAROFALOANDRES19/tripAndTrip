@@ -3,13 +3,13 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-12 header-section">
+      <div class="col-12 header-section" *ngIf="!destinos">
 
         <img src="/assets/img/active-adrenaline-adventure-web.gif" alt="test" class="img-responsive">
         <div class="carousel-caption">
           <h2>{{titulo}}</h2>
         </div>
-        <div>
+        <div class="down">
           <i class="toDown fas fa-caret-down"></i>
         </div>
       </div>

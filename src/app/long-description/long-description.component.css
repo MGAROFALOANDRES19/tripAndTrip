@@ -41,3 +41,13 @@ span{
     color: var(--amarillo-oscuro);
     margin-bottom: 20px;
 }
+
+@media only screen and (min-width: 768px) {
+    
+    .img-fluid{
+        width: 70%;
+        height: 270px;
+        margin: 0 15%;
+        object-fit: cover;
+    }
+}

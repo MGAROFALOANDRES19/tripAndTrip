@@ -5,13 +5,12 @@
       <img class="img-responsive center" [src]="items[itemSelected].foto" alt="">
     </div>
     <img class="aditamento" src="src/assets/icons/avion_corto-15.png" alt="Avion corto">
-    <h4>Deseamos que tu experiencia sea la mejor</h4>
-    <h6 *ngIf="form" >Un asesor se pondrá en contacto contigo</h6>
   </div>
 
   <!-- form goes here -->
   <form *ngIf="form" (ngSubmit)="processForm()">
-
+      <h4>Deseamos que tu experiencia sea la mejor</h4>
+      <h6 *ngIf="form" >Un asesor se pondrá en contacto contigo</h6>
     <!-- name -->
     <div class="field">
       <input type="text" name="name" class="input" placeholder="Nombre y apellido" [(ngModel)]="name">
@@ -31,11 +30,13 @@
       <input type="text" name="city" class="input" placeholder="Ciudad" [(ngModel)]="city">
     </div>
     <p>Como te gustaria que nos comuniquemos</p>
-    <div class="row">
+    <!--<div class="row">
       <button *ngIf="!destinos" (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/wtpp verde-15.png" alt="Whatsapp"></button>
       <button *ngIf="!destinos" (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/telefono verd-15.png" alt="Teléfono"></button>
       <a *ngIf="destinos" href="despegar.com" class="btn btn-danger btn-lg btn-block">Shopping center ahora</a>
-    </div>
+    </div>-->
+
+    <button class="btn-shop">Shopping Center ahora</button>
 
   </form>
 

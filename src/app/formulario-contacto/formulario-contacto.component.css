@@ -87,6 +87,14 @@ button {
     border: none;
 }
 
+.btn-shop{
+    background-color: var(--precios);
+    height: 75px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}
+
 button img {
     width: 45%;
 }
@@ -102,4 +110,56 @@ button img {
 
 .btn-danger{
     background-color: var(--precios)
+}
+
+@media only screen and (min-width: 768px) {
+
+    #form{
+        float: left;
+        margin-bottom: -210px;
+    margin-top: 50px;
+    margin-left: 19%;
+    position: absolute;
+    }
+
+    .aditamento{
+        right: auto;
+        width: 368px;
+        top: 175px;
+        left: 5%;
+        height: 85px;
+    }
+
+    .img-wrapper{
+        width: 400px;
+        height: 239px;
+    }
+
+    form{
+        width: 50% !important;
+        background: #111;
+        margin-right: 15%;
+        margin-top: 50px;
+        padding: 0 15%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    h4{
+        text-align: left;
+    /* float: left; */
+    margin-left: 0;
+    text-transform: uppercase;
+    float: left;
+    }
+
+    h6{
+        float: left;
+        text-transform: uppercase
+    }
+
+    .img-responsive{
+        object-fit: cover
+    }
+
 }
