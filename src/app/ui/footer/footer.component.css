@@ -45,11 +45,13 @@ footer a{
 
 .social-contact{
   width: 100%;
-  text-align: center
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-.col-md-4{
+.col-xs-4{
   margin-bottom: 25px;
+  margin-left: 10px;
 }
 
 .social-contact span{
@@ -66,6 +68,10 @@ footer > .row{
   margin-left: 20px;
 }
 
+.col-xs-4 i{
+  font-size: 2em
+}
+
 
 @media only screen and (min-width: 768px) {
 footer > .row{
@@ -78,7 +84,7 @@ a{
 
 
 .social-contact{
-  text-align: center
+  text-align: center;
 }
 
 

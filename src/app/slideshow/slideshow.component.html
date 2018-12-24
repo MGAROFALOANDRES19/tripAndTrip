@@ -18,6 +18,9 @@
         <span>Comprar boletos</span>
       </div>
     </div>
+
+    <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+
     <ngb-carousel *ngIf="items.length >= 1"
         (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
       <ng-template ngbSlide  class="swipe" *ngFor="let item of items" >

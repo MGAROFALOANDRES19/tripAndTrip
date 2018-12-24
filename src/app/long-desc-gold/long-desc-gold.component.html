@@ -1,5 +1,7 @@
 <app-layout>
 
+  <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+
 <div *ngIf="items.length >= 1">
 <h3>{{items[id].titulo}}</h3>
 <div class="line"></div>

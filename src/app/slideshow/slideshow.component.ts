@@ -22,6 +22,8 @@ export class SlideShowComponent implements OnInit {
 
   public destinos: boolean = false;
 
+  public showSpinner: boolean = true;
+
   constructor(private config: NgbCarouselConfig, private firebase: FirebaseService, private route: ActivatedRoute) {
 
     config.interval = 100000;
@@ -45,8 +47,8 @@ export class SlideShowComponent implements OnInit {
     this.items = [];
     this.data = this.firebase.getItems(this.titulo);
     this.data.subscribe((data) => {
-      this.items = data
-
+      this.items = data;
+      this.showSpinner = false;
     })
   }
 

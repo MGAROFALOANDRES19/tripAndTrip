@@ -14,6 +14,8 @@ export class LongDescGoldComponent implements OnInit {
   private data:Observable<any[]>;
   private id:number;
 
+  public showSpinner: boolean = true;
+
   constructor(private firebase:FirebaseService, private route:ActivatedRoute) { 
     this.route.params.subscribe(params => { this.id = params.id });
     this.id--
@@ -29,7 +31,8 @@ export class LongDescGoldComponent implements OnInit {
     this.items = [];
     this.data = this.firebase.getItems("gold trip");
     this.data.subscribe((data) => {
-      this.items = data
+      this.items = data;
+      this.showSpinner = false;
       
     })
   }
