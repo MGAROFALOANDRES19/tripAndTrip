@@ -3,17 +3,31 @@
 <div *ngIf="items.length >= 1">
 <h3>{{items[id].titulo}}</h3>
 <div class="line"></div>
+<div class="download">
+    <div> <a target="_blank" href="/assets/pdf/Curriculum%20Vitae%20-%20Marco%20Andres%20Garófalo%20Cervantes.pdf"><i
+          class="fas fa-file-pdf"></i></a></div>
+    <div><i class="fas fa-share-alt"></i></div>
+    <share-buttons></share-buttons>
+  </div>
 
 <div class="container">
-  <h5>{{items[id].subt_1}}</h5>
-  <p>{{items[id].descripcion_1}}</p>
-  <img [src]="items[id].foto_1" alt={{items[id].alt}}>
+  <div class="row">
+    <div class="col-6"><h5>{{items[id].subt_1}}</h5>
+      <p>{{items[id].descripcion_1}}</p></div>
+    <div class="col-6">
+      <div class="gallery"></div>
+    </div>
+  </div>  
 </div>
 <div class="container">
-  <h5>{{items[id].subt_2}}</h5>
-  <p>{{items[id].descripcion_2}}</p>
-  <img [src]="items[id].foto_2" alt={{items[id].alt}}>
-</div>
+    <div class="row">
+      <div class="col-6"><h5>{{items[id].subt_2}}</h5>
+        <p>{{items[id].descripcion_2}}</p></div>
+      <div class="col-6">
+        <div class="gallery"></div>
+      </div>
+    </div>  
+  </div>
 </div>
 
 </app-layout>

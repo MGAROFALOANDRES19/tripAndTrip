@@ -3,7 +3,7 @@
     <h4>QUE ESTAS BUSCANDO?</h4>
     <p>Keywords: Familia, playa, mascotas, pareja, etc.</p>
 </div>
-<ng-template #content let-c="close" let-d="dismiss">
+<ng-template #content let-modal let-c="close" let-d="dismiss">
 <div class="modal-header">
   <h4 class="modal-title" id="modal-basic-title">Busca por palabra</h4>
   <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
@@ -11,7 +11,7 @@
   </button>
 </div>
 <div class="modal-body">
-  <input type="text" placeholder="Ej: Familia" [(ngModel)]="itemFilter">
+  <input type="text" placeholder="Ej: Familia" [(ngModel)]="itemFilter" autofocus>
 </div>
 <ul>
   <button (click)="c('Save click')" *ngFor="let item of items | filterBy: itemFilter" class="items" (click)="addToSearch(item)">{{

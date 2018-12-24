@@ -33,3 +33,19 @@ h3{
     top: 54px;
     }
 
+share-buttons{
+    display: none
+}
+
+    @media only screen and (min-width: 768px) {
+    
+        .line{
+            width: 95px;
+            top: 94px;
+        }
+
+        h3{
+            font-size: 2.5rem;
+        }
+    
+    }

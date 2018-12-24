@@ -4,6 +4,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'hammerjs';
+import 'mousetrap';
+import {GalleryModule} from '@ks89/angular-modal-gallery';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { FilterPipeModule } from 'ngx-filter-pipe';
@@ -47,6 +50,7 @@ import { MenuDestinosComponent } from './menu-destinos/menu-destinos.component';
     MenuDestinosComponent,
   ],
   imports: [
+    GalleryModule.forRoot(),
     BrowserModule,
     NgbModule,
     AppRoutingModule,

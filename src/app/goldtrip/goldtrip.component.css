@@ -57,3 +57,28 @@ h3{
     position: absolute;
     top: 5%;
     }
+
+    @media only screen and (min-width: 768px) {
+        h4{
+            font-size: 2rem;
+    text-transform: uppercase;
+    margin-right: 25%;
+        }
+        h3{
+            text-transform: uppercase;
+    font-size: 3rem;
+    margin-right: 25%;
+    padding-right: unset;
+        }
+
+        i{
+            text-align: right;
+            padding-right: 15%;
+        }
+
+        ngb-carousel{
+            z-index: -5;
+        }
+
+        
+    }

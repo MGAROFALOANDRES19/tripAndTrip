@@ -13,7 +13,6 @@ i {
 	margin: 15px;
 }
 
-
 a {
 	color: white;
 }
@@ -22,7 +21,7 @@ a {
 	position: relative;
 	margin: auto;
 	top: 0;
-	left: 0;
+	left: 5%;
 }
 
 #menu {
@@ -39,6 +38,11 @@ a {
 	top: 5%;
 	left: 5%;
 	z-index: 100;
+
+}
+
+.navbar-brand img{
+	width: 90%
 }
 
 .img-header {
@@ -53,12 +57,18 @@ a {
 	z-index: 1000;
 	bottom: 0;
 	left: 5%;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.5);
 	width: 45%;
 	margin: auto;
 	text-align: center;
 	height: 60px;
 	border: none;
+	padding-top: 10px;
+	font-size: 1.2rem;
+}
+
+.pequeno>div {
+	margin-top: -15px;
 }
 
 .boletos {
@@ -78,52 +88,47 @@ a {
 	margin-top: 100vh;
 }
 
-.ofertas{
+.ofertas {
 	display: none
 }
 
-@media only screen and (min-width: 768px) {
 
-	.home-logo{
+
+@media only screen and (min-width: 768px) {
+	.home-logo {
 		width: 250px;
 	}
-
-	.home-logo img{
+	.home-logo img {
 		width: 100%;
 		-webkit-filter: drop-shadow(5px 5px 5px #222);
 		filter: drop-shadow(3px 3px 3px #000);
-		
 	}
 	.pequeno {
 		left: 0;
 		right: 0;
 		width: 28%;
-    height: 85px;
-    font-size: 1.5em;
-    padding-top: 25px;
+		height: 85px;
+		font-size: 1.5em;
+		padding-top: 25px;
 	}
-
-.pequeno div{
-	margin-top: -20px
-}
-
+	.pequeno div {
+		margin-top: -20px
+	}
 	.container {
 		max-width: none;
 	}
-
-	.ofertas{
+	.ofertas {
+		/*background-color: rgba(0,180,120,0.5);*/
+		/*padding: 0 46px;*/
 		display: block;
 		position: absolute;
 		width: 28%;
-		bottom: 0;
+		bottom: -7px;
 		right: 5%;
-		background-color: rgba(0,180,120,0.5);
-		height: 85px;
+		height: 115px;
 		text-align: center;
-		padding: 0 46px;
 	}
-
-	.ofertas div{
+	.ofertas div {
 		position: absolute;
 		font-size: 1.5em;
 		background-color: var(--precios);
@@ -134,12 +139,13 @@ a {
 		top: -10px;
 		left: -12px;
 	}
-
-	.ofertas h3{
+	.ofertas h3 {
 		margin-top: 15px;
 	}
-
-	.boletos{
+	.boletos {
 		display: none;
+	}
+	.search-img {
+		width: 20px;
 	}
 }

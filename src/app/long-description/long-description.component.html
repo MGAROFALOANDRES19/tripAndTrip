@@ -1,23 +1,41 @@
 <app-layout>
   <div *ngIf="(promociones[itemSelected])">
-    <div>
-      <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
-      <div class="container">
-          <share-buttons></share-buttons>
-        <div class="download">
-            <a target="_blank" href="/assets/pdf/Curriculum%20Vitae%20-%20Marco%20Andres%20Garófalo%20Cervantes.pdf"><i class="fas fa-file-pdf"></i></a>
-            <i class="fas fa-share-alt"></i>
+    <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
+    <div class="container">
+      <div class="row">
+        <div class="header-description col-5">
+
+          <h4>{{promociones[itemSelected].titulo}}</h4>
+          <h3><sup>$</sup>{{promociones[itemSelected].precio}}</h3>
+          <span class="diferido">De 4 a 12 meses diferido</span>
+          <div class="download">
+            <div> <a target="_blank" href="/assets/pdf/Curriculum%20Vitae%20-%20Marco%20Andres%20Garófalo%20Cervantes.pdf"><i
+                  class="fas fa-file-pdf"></i></a></div>
+            <div><i class="fas fa-share-alt"></i></div>
+            <share-buttons></share-buttons>
+          </div>
         </div>
-        <h4>{{promociones[itemSelected].titulo}}</h4>
-        <h3><sup>$</sup>{{promociones[itemSelected].precio}}</h3>
-        <span class="diferido">De 4 a 12 meses diferido</span>
-        <div class="container">
+
+        <div class="description_1 col-7">
           <p>{{promociones[itemSelected].descripcion}}</p>
-          <span>Tags: {{promociones[itemSelected].tags.join(', ')}}.</span>
-          <a href="/{{titulo}}/{{promociones[itemSelected].id}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero viajar</a>
         </div>
       </div>
+      <div class="container row">
+        <div class="gallery col-6">
+          <ks-modal-gallery [id]="1" [modalImages]="images"></ks-modal-gallery>
+        </div>
+        <div class="col-6">
+          <h4>SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE</h4>
+        </div>
+        <div class="description_2">
+          <p>{{promociones[itemSelected].descripcion}}</p>
+        </div>
+        <span>Tags: {{promociones[itemSelected].tags.join(', ')}}.</span>
+        <a href="/{{titulo}}/{{promociones[itemSelected].id}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero
+          viajar</a>
+      </div>
+
     </div>
   </div>
-  
+
 </app-layout>

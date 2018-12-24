@@ -18,36 +18,83 @@ sup {
     margin-left: 15px;
 }
 
-span{
+span {
     opacity: 0.7;
 }
 
-.container > .container {
+.container>.container {
     background: var(--fondo-slider);
     margin-bottom: 25px;
     padding-top: 15px;
     margin-top: 10px;
 }
 
-.download{
-    position: absolute;
+.download {
     right: 20px;
     margin-top: 45px;
 }
 
-.download i{
+.download i {
     width: 100%;
     font-size: 2em;
-    color: var(--amarillo-oscuro);
+    color: black;
     margin-bottom: 20px;
 }
 
+.download div {
+    border-radius: 50%;
+    background-color: var(--amarillo-oscuro);
+    width: 60px;
+    text-align: center;
+    height: 60px;
+    padding-top: 13px;
+    margin-bottom: 15px;
+}
+
+share-buttons {
+    display: none
+}
+
 @media only screen and (min-width: 768px) {
-    
-    .img-fluid{
+    .header-description h4 {
+        font-size: 2rem
+    }
+    .header-description h3 {
+        font-size: 1.5rem;
+    }
+    .diferido {
+        margin-left: auto;
+        font-size: 1.2rem;
+    }
+    .download {
+        margin-left: 5%
+    }
+    .img-fluid {
         width: 70%;
         height: 270px;
         margin: 0 15%;
         object-fit: cover;
+    }
+    .description_1 {
+        margin-top: 5%;
+        background-color: var(--fondo-slider);
+        padding: 0 5%;
+        padding-top: 15px;
+    }
+    .description_2 {
+        padding: 0 10%;
+        padding-top: 5%;
+    }
+
+    .btn-block{
+        width: 50%;
+        margin-top: 30px;
+        margin-bottom: -40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .container > .container{
+        padding-bottom: 25px;
     }
 }

@@ -1,13 +1,27 @@
+
+<!--<img src="/assets/animations/gif de carga trip.gif" alt="Trip and trip"> -->
+
 <a class="navbar-brand home-logo" href="#"><img src="/assets/icons/logo.png" alt="logo"></a>
-<img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">
+<!--<img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">-->
+
+
+<video class="img-header" autoplay>
+  <source src="/assets/animations/video_fondo.mp4" type="video/mp4">
+  <source src="/assets/animations/video_fondo.ogg" type="video/ogg">
+  <img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">
+</video>
+
 <app-searcher></app-searcher>
 <button *ngIf="!showed" (click)="showMenu()" class="pequeno">CATEGORIAS<div>
     <i class="toDown fas fa-caret-down"></i>
   </div></button>
 <div class="boletos">
-  <img src="/assets/icons/despegar-inicio-movil.png" alt="Despegar.com">
+ <a href="https://www.e-agencias.com.ec/ag81649"> <img src="/assets/icons/despegar-inicio-movil.png" alt="Despegar.com"></a>
 </div>
-<div class="ofertas"> <div>Ofertas</div> <h3>BOLETOS Y HOSPEDAJE AHORA</h3></div>
+<a href="https://www.e-agencias.com.ec/ag81649">
+  <!--<div class="ofertas"> <div>Ofertas</div> <h3>BOLETOS Y HOSPEDAJE AHORA</h3></div>-->
+  <img class="ofertas" src="/assets/icons/despegar-inicio-escritorio.png" alt="Despegar.com">
+</a>
 <div>
 
   <div (click)="showMenu()" *ngIf="showed" id="menu" class="container" [@slide]="status">

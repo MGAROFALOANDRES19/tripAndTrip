@@ -19,7 +19,7 @@
 	right: 0;
 	top: 19%;
 	width: 100%;
-	background-color: var(--amarillo-oscuro);
+	background-color: rgba(128,100,21, 0.7);
 	padding: 10px;
 }
 

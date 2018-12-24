@@ -19,7 +19,7 @@
   --fondo-pie: #310D1D;
   --sliders: #A09F9F;
   --texto-general: #cdcccc;
-  --fondo-slider: #071E16;
+  --fondo-slider: #1B1B1B;
   --fondo-footer: #231a11;
 }
 
@@ -152,4 +152,14 @@ app-goldtrip ngb-carousel a{
     position: absolute;
     top: 0;
   }
+
+
+  ks-modal-gallery .plain-container{
+    display: inline !important;
+}
+
+ks-modal-gallery img:first-child{
+  width: 100% !important;
+}
+
 }
