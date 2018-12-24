@@ -127,6 +127,27 @@ a:focus:hover > div{
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   }
 
+.america{
+    max-height: 30%;
+}
+
+.menuDestinos .col-sm-5{
+    height: 70%;
+}
+
+.caribe{
+    height: 40% !important;
+}
+
+.america{
+    max-height: none;
+    height: 75% !important;
+}
+
+.menuDestinos .col-sm-7{
+    height: 30%;
+}
+
 @media only screen and (min-width: 768px) {
 
     .menuPrincipal{

@@ -51,8 +51,35 @@ span {
     margin-bottom: 15px;
 }
 
-share-buttons {
-    display: none
+
+.img-fluid{
+    height: 30vh;
+    width: 100%;
+    object-fit: cover
+}
+
+.header-description h3, .description_1{
+    margin-left: 15px;
+}
+
+.download{
+    position: absolute;
+    top: 0
+}
+
+.download div{
+    width: 45px;
+    height: 45px;
+    font-size: 10pt;
+    padding-top: 9px;
+}
+
+.description_1{
+    margin-top: 25px
+}
+
+.margin-auto{
+    margin: auto !important
 }
 
 @media only screen and (min-width: 768px) {

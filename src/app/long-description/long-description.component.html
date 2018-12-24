@@ -3,7 +3,7 @@
     <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
     <div class="container">
       <div class="row">
-        <div class="header-description col-5">
+        <div class="header-description col-md-5">
 
           <h4>{{promociones[itemSelected].titulo}}</h4>
           <h3><sup>$</sup>{{promociones[itemSelected].precio}}</h3>
@@ -11,26 +11,38 @@
           <div class="download">
             <div> <a target="_blank" href="/assets/pdf/Curriculum%20Vitae%20-%20Marco%20Andres%20Garófalo%20Cervantes.pdf"><i
                   class="fas fa-file-pdf"></i></a></div>
-            <div><i class="fas fa-share-alt"></i></div>
-            <share-buttons></share-buttons>
+            <div (click)="open(content)"><i class="fas fa-share-alt"></i></div>
+
+          <ng-template #content let-modal let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Compartir...</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-share-buttons></app-share-buttons>
+          </div>
+          </ng-template>
+
           </div>
         </div>
 
-        <div class="description_1 col-7">
+        <div class="description_1 col-md-7">
           <p>{{promociones[itemSelected].descripcion}}</p>
         </div>
       </div>
-      <div class="container row">
-        <div class="gallery col-6">
+      <div class="container row margin-auto">
+        <div class="gallery col-md-6">
           <ks-modal-gallery [id]="1" [modalImages]="images"></ks-modal-gallery>
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
           <h4>SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE</h4>
         </div>
         <div class="description_2">
           <p>{{promociones[itemSelected].descripcion}}</p>
         </div>
-        <span>Tags: {{promociones[itemSelected].tags.join(', ')}}.</span>
+        <span>Tags: {{promociones[itemSelected].tags.join('- ')}}.</span>
         <a href="/{{titulo}}/{{promociones[itemSelected].id}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero
           viajar</a>
       </div>

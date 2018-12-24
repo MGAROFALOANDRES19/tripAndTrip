@@ -1,31 +1,31 @@
 <app-layout>
 <div class="menuDestinos">
 <div class="row">
-  <div class="col-5">
+  <div class="col-sm-5">
         <a (click)="goTo('caribe')" class="row caribe">
           <div [@light]="status['caribe']">
             <h5>CARIBE</h5>
           </div>
         </a>
     <div class="row america">
-        <a (click)="goTo('norteAmerica')" class="col-sm-4 norteAmerica">
+        <a (click)="goTo('norteAmerica')" class="col-4 norteAmerica">
           <div [@light]="status['norteAmerica']">
             <h5>NORTE AMÉRICA</h5>
           </div>
         </a>
-        <a (click)="goTo('centroAmerica')" class="col-sm-4 centroAmerica">
+        <a (click)="goTo('centroAmerica')" class="col-4 centroAmerica">
           <div [@light]="status['centroAmerica']">
             <h5>CENTRO AMÉRICA</h5>
           </div>
         </a>
-        <a (click)="goTo('surAmerica')" class="col-sm-4 surAmerica">
+        <a (click)="goTo('surAmerica')" class="col-4 surAmerica">
           <div [@light]="status['surAmerica']">
             <h5>SUR AMÉRICA</h5>
           </div>
         </a>
     </div>
   </div>
-  <div class="col-7">
+  <div class="col-sm-7">
     <div class="row">
           <a (click)="goTo('europa')" class="col-6 europa">
             <div [@light]="status['europa']">

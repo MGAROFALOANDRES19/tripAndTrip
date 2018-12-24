@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Promocion} from '../slideshow/promocion';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { FirebaseService } from '../services/firebase.service'
+import { FirebaseService } from '../services/firebase.service';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
   AccessibilityConfig,
   Action,
@@ -31,7 +32,8 @@ import {
 @Component({
   selector: 'app-long-description',
   templateUrl: './long-description.component.html',
-  styleUrls: ['./long-description.component.css']
+  styleUrls: ['./long-description.component.css'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class LongDescriptionComponent implements OnInit { 
 
@@ -110,7 +112,11 @@ export class LongDescriptionComponent implements OnInit {
   ];
 
 
-  constructor(private firebase:FirebaseService, private route: ActivatedRoute) { 
+  constructor(
+    private firebase:FirebaseService,
+    private route: ActivatedRoute,
+    config: NgbModalConfig,
+    private modalService: NgbModal) { 
     this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
     if (this.titulo != "gold-trip"){
     this.data = this.firebase.getItems(this.titulo);
@@ -127,5 +133,11 @@ export class LongDescriptionComponent implements OnInit {
     })
     this.itemSelected--;
   }
+
+
+  open(content) {
+    this.modalService.open(content);
+  }
+  
 
 }

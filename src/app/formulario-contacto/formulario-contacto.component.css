@@ -105,11 +105,15 @@ button img {
     right: 0;
     width: 40%;
     height: 40px;
-    top: 180px;
+    top: 195px;
 }
 
 .btn-danger{
     background-color: var(--precios)
+}
+
+.btn-shop{
+    max-width: 60%;
 }
 
 @media only screen and (min-width: 768px) {

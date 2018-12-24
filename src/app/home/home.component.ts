@@ -26,8 +26,7 @@ export class HomeComponent implements OnInit {
   public showed: boolean = false;
 
   constructor( config: NgbModalConfig, private modalService: NgbModal ) { 
-    config.backdrop = 'static';
-    config.keyboard = false;
+
   }
 
   ngOnInit() {
