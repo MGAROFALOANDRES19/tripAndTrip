@@ -148,4 +148,7 @@ a {
 	.search-img {
 		width: 20px;
 	}
+	nav .navbar-brand{
+		left: 0 !important;
+	}
 }

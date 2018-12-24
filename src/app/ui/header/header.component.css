@@ -48,7 +48,7 @@
     }
 
     .navbar-brand{
-        left: 0;
+        left: 0 !important;
         right: 0;
         margin: auto;
     }
