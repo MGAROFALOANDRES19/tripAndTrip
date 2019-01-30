@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { FirebaseService } from '../services/firebase.service';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Title }  from '@angular/platform-browser';
 import {
   AccessibilityConfig,
   Action,
@@ -38,10 +39,13 @@ import {
 export class LongDescriptionComponent implements OnInit { 
 
   public data:Observable<any[]>;
-  public promociones:Promocion[] = [];
+  public promociones:any[] = [];
   public titulo:string;
-  public itemSelected:number;
+  public itemSelected:String;
+  public item:any;
   public promocion:Promocion;
+  public lugar:String;
+  public destinos:boolean = false;
 
   imageIndex = 1;
   galleryId = 1;
@@ -116,22 +120,43 @@ export class LongDescriptionComponent implements OnInit {
     private firebase:FirebaseService,
     private route: ActivatedRoute,
     config: NgbModalConfig,
-    private modalService: NgbModal) { 
-    this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
+    private modalService: NgbModal,
+    private titleService: Title) { 
+    this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id, this.lugar = params.lugar} );
     if (this.titulo != "gold-trip"){
     this.data = this.firebase.getItems(this.titulo);
   }
-  else{
+  if(this.titulo == "destinos"){
+    this.data = this.firebase.getItems(this.titulo+"/"+this.lugar);
+    console.log("HOLAAA"+this.lugar);
+    this.destinos = true;
+  }
+  if (this.titulo == "gold-trip"){
     this.data = this.firebase.getItems("gold trip");
   }
 
   }
 
   ngOnInit() {
+    
     this.data.subscribe((promociones) => {
       this.promociones = promociones
+      for (let item of promociones) {
+        if(this.itemSelected == item.url){
+          this.item = item;
+          if(this.titulo != "gold-trip" && this.titulo != "destinos"){
+            this.setTitle("Trip and Trip | " + this.titulo.charAt(0).toUpperCase() + this.titulo.slice(1))
+          }
+
+          else if(this.titulo == "destinos"){
+            this.setTitle("Trip and Trip | " + this.item.titulo.charAt(0).toUpperCase() + this.item.titulo.slice(1))
+            console.log(this.item)
+          }
+
+        }
+    }
+    
     })
-    this.itemSelected--;
   }
 
 
@@ -139,5 +164,8 @@ export class LongDescriptionComponent implements OnInit {
     this.modalService.open(content);
   }
   
+  setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
 
 }

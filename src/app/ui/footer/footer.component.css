@@ -55,7 +55,8 @@ footer a{
 }
 
 .social-contact span{
-  display: block
+  display: block;
+  font-size: 1em;
 }
 
 footer *{
@@ -69,9 +70,16 @@ footer > .row{
 }
 
 .col-xs-4 i{
-  font-size: 2em
+  font-size: 1.3em
 }
 
+footer > .row > .col-md-4 > .row{
+  margin: auto
+}
+
+span{
+  font-size: 0.9em;
+}
 
 @media only screen and (min-width: 768px) {
 footer > .row{
@@ -91,6 +99,7 @@ a{
 .social-contact span{
   clear: both;
   display: inherit;
+  font-size: 1em;
 }
 
 footer{
@@ -99,6 +108,10 @@ footer{
 
 .row .col-md-4 a{
   font-size: 1.3rem
+}
+
+span{
+  font-size: 0.9em;
 }
 
 }

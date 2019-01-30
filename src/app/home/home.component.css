@@ -92,6 +92,17 @@ a {
 	display: none
 }
 
+.boletos img{
+	margin-bottom: -1px;
+}
+
+.video-header{
+	display: none;
+}
+
+.image-header{
+	display: block;
+}
 
 
 @media only screen and (min-width: 768px) {
@@ -100,8 +111,6 @@ a {
 	}
 	.home-logo img {
 		width: 100%;
-		-webkit-filter: drop-shadow(5px 5px 5px #222);
-		filter: drop-shadow(3px 3px 3px #000);
 	}
 	.pequeno {
 		left: 0;
@@ -150,5 +159,13 @@ a {
 	}
 	nav .navbar-brand{
 		left: 0 !important;
+	}
+
+	.image-header{
+		display: none;
+	}
+	
+	.video-header{
+		display: block;
 	}
 }

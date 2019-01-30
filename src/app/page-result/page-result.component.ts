@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service'
 import { Observable, from } from 'rxjs';
 import { Promocion } from '../slideshow/promocion';
+import { Title } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-PageResult',
@@ -22,7 +23,7 @@ export class PageResultComponent implements OnInit {
   public itemsFounds: any[] = []
   public data: Observable<any[]>;
 
-  constructor(private firebase: FirebaseService, private route: ActivatedRoute) {
+  constructor(private firebase: FirebaseService, private route: ActivatedRoute, private titleService : Title  ) {
 
     this.route.params.subscribe(params => { this.keyword = params.keyword });
     this.callToDatabase('promociones');
@@ -33,7 +34,7 @@ export class PageResultComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.setTitle("Trip and Trip | " + this.keyword);
   }
 
   callToDatabase(type:String) {
@@ -46,6 +47,11 @@ export class PageResultComponent implements OnInit {
 
     })
 
+  }
+
+
+  setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
   }
 
   find(keyword: String, type: String) {

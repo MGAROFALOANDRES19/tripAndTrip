@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class FirebaseService {
 
   public data: Observable<any[]>;
+  public object:any;
 
   constructor(private db: AngularFireDatabase) { }
 
@@ -15,6 +16,5 @@ export class FirebaseService {
     this.data = this.db.list(tabla).valueChanges();
     return this.data
   }
-
 
 }

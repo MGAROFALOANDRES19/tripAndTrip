@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service'
 import { Observable } from "rxjs";
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Title }  from '@angular/platform-browser';
 
 @Component({
   selector: 'app-long-desc-gold',
@@ -16,7 +18,9 @@ export class LongDescGoldComponent implements OnInit {
 
   public showSpinner: boolean = true;
 
-  constructor(private firebase:FirebaseService, private route:ActivatedRoute) { 
+  constructor(private firebase:FirebaseService, private route:ActivatedRoute, private titleService:Title,
+    config: NgbModalConfig,
+    private modalService: NgbModal) { 
     this.route.params.subscribe(params => { this.id = params.id });
     this.id--
     this.callToDatabase()
@@ -24,6 +28,7 @@ export class LongDescGoldComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.items)
+    this.setTitle("Trip and Trip | " + this.id)
   }
 
 
@@ -36,5 +41,14 @@ export class LongDescGoldComponent implements OnInit {
       
     })
   }
+
+  setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
+
+  open(content) {
+    this.modalService.open(content);
+  }
+  
 
 }

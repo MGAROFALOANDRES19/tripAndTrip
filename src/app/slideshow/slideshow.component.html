@@ -2,35 +2,37 @@
 
   <div class="container">
     <div class="row">
+      <div *ngIf="header_img" class="col-12 header-section">
 
-      <div class="col-12 header-section" *ngIf="!destinos">
-
-        <img src="/assets/img/active-adrenaline-adventure-web.gif" alt="test" class="img-responsive">
+        <img src="/assets/img/{{header_img}}" alt="test" class="img-responsive">
         <div class="carousel-caption">
-          <h2>{{titulo}}</h2>
+          <h2 *ngIf="!destinos">{{titulo}}</h2>
+          <h2 *ngIf="destinos">DESTINOS</h2>
         </div>
         <div class="down">
           <i class="toDown fas fa-caret-down"></i>
         </div>
       </div>
       <div *ngIf="destinos" class="boletos">
-        <img src="src/assets/icons/comprar boletos-15.png" alt="">
+        <img src="/assets/icons/comprar boletos-15.png" alt="">
         <span>Comprar boletos</span>
       </div>
     </div>
 
     <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
 
-    <ngb-carousel *ngIf="items.length >= 1"
-        (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
+    <ngb-carousel id="carousel" [style.touch-action]="'pan-y'" *ngIf="items.length >= 1"
+        (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)"
+        (swipeup)="swipe($event.type)" (swipedown)="swipe($event.type)">
       <ng-template ngbSlide  class="swipe" *ngFor="let item of items" >
         <div *ngIf="destinos" class="ubicacion">
-          <h3>{{item.ubicacion}}</h3>
-          <h4>{{item.sub_ubicacion}}</h4>
+          <h3 *ngIf="!destinos">{{titulo}}</h3>
+          <h3 *ngIf="destinos">{{destino}}</h3>
+          
         </div>
-        <a *ngIf="destinos" href="/{{titulo}}/{{item.id}}/contacto">
+        <a *ngIf="destinos" href="/{{titulo}}/{{item.titulo}}/contacto">
           <div class="boletos">
-            <img src="src/assets/icons/comprar boletos-15.png" alt="">
+            <img src="/assets/icons/comprar boletos-15.png" alt="">
             <span>Comprar boletos</span>
           </div>
         </a>
@@ -38,15 +40,16 @@
             <p>12 cuotas</p>
           </div>
           <img [ngClass]="{aditamento_destino:destinos}" class="aditamento" src="/assets/icons/interface-15.png" alt="">
-        <img class="foto" [src]="item.foto" alt={{item.alt}}>
+        <img class="foto" src="/assets/img/{{titulo}}/{{item.foto}}" alt={{item.alt}}>
         <div class="slider-caption">
           <h4>{{item.titulo}}</h4>
-          <h5>{{item.descripcion_corta}}</h5>
+          <h5>{{item.descripcion_corta}}</h5> <!--SOLO PUEDEN HASTA DOS LINEAS-->
           <div class="lugar"><i class="fas fa-hourglass-start"></i><span> {{item.duracion}}</span></div>
           <div class="lugar"><i class="fas fa-map-marker-alt"></i><span> {{item.lugar}}</span></div>
         </div>
-        <a class="btn btn-primary btn-lg btn-block" href="/{{titulo}}/{{item.id}}">Mas info</a>
-        <a href="/{{titulo}}/{{item.id}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero viajar</a>
+        <a *ngIf="!destinos" class="btn btn-primary btn-lg btn-block" href="/{{titulo}}/{{item.url}}">Mas información</a>
+        <a *ngIf="destinos" class="btn btn-primary btn-lg btn-block" href="destinos/{{titulo}}/{{item.url}}">Mas información</a>
+        <a href="/{{titulo}}/{{item.url}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero viajar</a>
       </ng-template>
     </ngb-carousel>
   </div>

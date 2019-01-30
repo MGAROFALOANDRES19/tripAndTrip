@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import { Title }  from '@angular/platform-browser';
 import {
   trigger,
   state,
@@ -32,7 +33,8 @@ export class MenuDestinosComponent implements OnInit {
 
 
   constructor(
-    private router: Router
+    private router: Router,
+    private titleService:Title
     ) {}
 
   goTo(link:String){
@@ -49,6 +51,13 @@ export class MenuDestinosComponent implements OnInit {
       console.log("yes")
     }
 
+    this.setTitle("Trip and Trip | Destinos")
+
+  }
+
+
+  setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
   }
 
 

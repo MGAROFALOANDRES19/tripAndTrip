@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
@@ -34,6 +35,20 @@ import { LongDescGoldComponent } from './long-desc-gold/long-desc-gold.component
 import { SearcherComponent } from './searcher/searcher.component';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { MenuDestinosComponent } from './menu-destinos/menu-destinos.component';
+import { Title }  from '@angular/platform-browser';
+
+import * as Hammer from 'hammerjs';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
+export class MyHammerConfig extends HammerGestureConfig  {
+  buildHammer(element: HTMLElement) {
+    let mc = new Hammer(element, {
+      touchAction: "pan-y",
+    });
+    return mc;
+  }
+}
+
 
 @NgModule({
   declarations: [
@@ -66,10 +81,13 @@ import { MenuDestinosComponent } from './menu-destinos/menu-destinos.component';
     BrowserAnimationsModule,
     FilterPipeModule,
     HttpClientJsonpModule,  // (Optional) Add if you want tumblr share counts
-    ShareButtonsModule //revisar
-
+    ShareButtonsModule, //revisar
+    ReactiveFormsModule
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService, Title,
+   { provide: HAMMER_GESTURE_CONFIG, 
+    useClass: MyHammerConfig 
+  }],
   bootstrap: [AppComponent],
 
 })

@@ -116,6 +116,14 @@ button img {
     max-width: 60%;
 }
 
+h4{
+    text-align: center
+}
+
+form{
+    text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
 
     #form{

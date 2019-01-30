@@ -8,13 +8,26 @@
 <div class="download">
     <div> <a target="_blank" href="/assets/pdf/Curriculum%20Vitae%20-%20Marco%20Andres%20Garófalo%20Cervantes.pdf"><i
           class="fas fa-file-pdf"></i></a></div>
-    <div><i class="fas fa-share-alt"></i></div>
+          <div (click)="open(content)"><i class="fas fa-share-alt"></i></div>
+
+          <ng-template #content let-modal let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Compartir...</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <app-share-buttons></app-share-buttons>
+          </div>
+          </ng-template>
+
     <share-buttons></share-buttons>
   </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-6"><h5>{{items[id].subt_1}}</h5>
+    <div class="col-md-6"><h5>{{items[id].subt_1}}</h5>
       <p>{{items[id].descripcion_1}}</p></div>
     <div class="col-6">
       <div class="gallery"></div>
@@ -23,7 +36,7 @@
 </div>
 <div class="container">
     <div class="row">
-      <div class="col-6"><h5>{{items[id].subt_2}}</h5>
+      <div class="col-md-6"><h5>{{items[id].subt_2}}</h5>
         <p>{{items[id].descripcion_2}}</p></div>
       <div class="col-6">
         <div class="gallery"></div>

@@ -1,12 +1,14 @@
 <app-layout>
-  <div *ngIf="(promociones[itemSelected])">
-    <img class="img-fluid" [src]="promociones[itemSelected].foto" alt={{promociones[itemSelected].alt}}>
+  <div *ngIf="item">
+    <img *ngIf="!destinos" class="img-fluid" src="/assets/img/{{titulo}}/{{item.foto}}" alt={{item.alt}}>
+    <img *ngIf="destinos" class="img-fluid" src="/assets/img/{{lugar}}/{{item.foto}}" alt={{item.alt}}>
     <div class="container">
       <div class="row">
         <div class="header-description col-md-5">
 
-          <h4>{{promociones[itemSelected].titulo}}</h4>
-          <h3><sup>$</sup>{{promociones[itemSelected].precio}}</h3>
+          <h4>{{item.titulo}}</h4>
+          <h3><sup>$</sup>{{item.precio_especial}}</h3>
+          <h5><sup>$</sup>{{item.precio}}</h5>
           <span class="diferido">De 4 a 12 meses diferido</span>
           <div class="download">
             <div> <a target="_blank" href="/assets/pdf/Curriculum%20Vitae%20-%20Marco%20Andres%20Garófalo%20Cervantes.pdf"><i
@@ -29,7 +31,8 @@
         </div>
 
         <div class="description_1 col-md-7">
-          <p>{{promociones[itemSelected].descripcion}}</p>
+          <h2>Incluye: </h2>
+          <li  *ngFor="let item of item.descripcion_1.slice(1)">{{item}}</li>
         </div>
       </div>
       <div class="container row margin-auto">
@@ -40,10 +43,14 @@
           <h4>SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE SECOND TITLE</h4>
         </div>
         <div class="description_2">
-          <p>{{promociones[itemSelected].descripcion}}</p>
+          <p>{{item.descripcion_2}}</p>
         </div>
-        <span>Tags: {{promociones[itemSelected].tags.join('- ')}}.</span>
-        <a href="/{{titulo}}/{{promociones[itemSelected].id}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero
+        <div class="notes">
+          <p ><span>Nota: </span> Pregunta por aquellas cosas que no se incluyen en el paquete.</p>
+          <span >Tags: {{item.tags.join('- ')}}.</span>
+        </div>
+        
+        <a href="/{{titulo}}/{{item.url}}/contacto" class="btn btn-secondary btn-lg btn-block">Quiero
           viajar</a>
       </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-contacto',
@@ -10,40 +11,41 @@ import { Observable } from 'rxjs';
 })
 export class FormularioContactoComponent implements OnInit {
 
-  name: string;
-  email: string;
-  phone: string;
-  city: string;
-  private itemSelected:number;
+model : any = {};
+
+  private itemSelected:String;
   private titulo:String;
   private data:Observable<any>;
   items:any[] = [];
   form:boolean;
+  item:any;
 
   public destinos:boolean = false;
 
-  constructor( private firebase:FirebaseService, private route: ActivatedRoute ) { 
+  constructor( private firebase:FirebaseService, private route: ActivatedRoute, private fb: FormBuilder ) { 
     this.route.params.subscribe( params => {this.titulo = params.titulo, this.itemSelected = params.id} );
     this.data = this.firebase.getItems(this.titulo);
     this.form = true;
-    this.urls()
+    this.urls();
   }
 
   ngOnInit() {
+
     this.data.subscribe((items) => {
-      this.items = items
+      this.items = items;
+      for(let item of items){
+        if(item.url == this.itemSelected){
+          this.item = item;
+        }
+      }
     })
-    this.itemSelected--;
   }
 
-  processForm() {
-    const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.phone }`;
-    alert(allInfo); 
-  }
-
-  submit(){
+   onSubmit() {
     this.form = false;
-  }
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model))
+}
 
 
   urls(){

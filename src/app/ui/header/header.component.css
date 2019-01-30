@@ -25,7 +25,10 @@
 
 #menu{
     height: 92vh;
-    transform: translateX(-100%)
+    transform: translateX(-100%);
+    z-index: 1;
+    position: absolute;
+    width: 100%
 }
 
 .transparent{

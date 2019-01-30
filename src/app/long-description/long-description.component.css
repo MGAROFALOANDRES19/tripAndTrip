@@ -58,8 +58,12 @@ span {
     object-fit: cover
 }
 
-.header-description h3, .description_1{
+.header-description h3, h5, .description_1{
     margin-left: 15px;
+}
+
+.description_1{
+   /* margin-right: 15px;*/
 }
 
 .download{
@@ -82,12 +86,27 @@ span {
     margin: auto !important
 }
 
+p > span{
+    font-weight: bold
+}
+
+.notes{
+    width: 100%;
+}
+.notes > p{
+    float: left;
+}
+
+.notes > span{
+    float: right;
+}
+
 @media only screen and (min-width: 768px) {
     .header-description h4 {
         font-size: 2rem
     }
     .header-description h3 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     .diferido {
         margin-left: auto;
@@ -97,9 +116,9 @@ span {
         margin-left: 5%
     }
     .img-fluid {
-        width: 70%;
+        width: 80%;
         height: 270px;
-        margin: 0 15%;
+        margin: 0 10%;
         object-fit: cover;
     }
     .description_1 {
@@ -107,6 +126,8 @@ span {
         background-color: var(--fondo-slider);
         padding: 0 5%;
         padding-top: 15px;
+        padding-bottom: 20px;
+        margin-left: auto;
     }
     .description_2 {
         padding: 0 10%;
@@ -123,5 +144,17 @@ span {
 
     .container > .container{
         padding-bottom: 25px;
+    }
+
+    .header-description span{
+        margin-left: 15px;
+    }
+
+    .download{
+        position: relative;
+    }
+
+    .container > .row{
+        margin-bottom: 50px !important
     }
 }

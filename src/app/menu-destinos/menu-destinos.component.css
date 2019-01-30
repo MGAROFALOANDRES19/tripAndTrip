@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-.menuDestinos a{
-    border: 4px solid black;
-}
-
 a{
     color: white;
     background-size: cover
@@ -35,7 +31,7 @@ a h5{
 }
 
 .caribe{
-    height: 30% !important;
+    height: 100% !important;
     background-image: url('/assets/img/CARIBE.gif');
 }
 
@@ -44,7 +40,7 @@ a h5{
 }
 
 .america{
-    height: 70% !important;
+    height: 57% !important;
 }
 
 .centroAmerica{
@@ -56,7 +52,7 @@ a h5{
 }
 
 .europa{
-    height: 100%;
+    height: 40%;
     background-image: url('/assets/img/EUROPA.gif');
 }
 
@@ -132,23 +128,31 @@ a:focus:hover > div{
 }
 
 .menuDestinos .col-sm-5{
-    height: 70%;
+    height: 30%;
 }
 
 .caribe{
-    height: 40% !important;
+    height: 100% !important;
 }
 
 .america{
     max-height: none;
-    height: 75% !important;
+    height: 60% !important;
 }
 
 .menuDestinos .col-sm-7{
-    height: 30%;
+    height: 70%;
+}
+
+.europa{
+    height: 40% !important;
 }
 
 @media only screen and (min-width: 768px) {
+
+    .menuDestinos a{
+        border: 4px solid black;
+    }    
 
     .menuPrincipal{
         display: none;
@@ -198,5 +202,12 @@ a:focus:hover > div{
     .News{
         height: 45%;
     }
+    
+    .menuDestinos .col-sm-7, .menuDestinos .col-sm-5{
+        height: 100%;
+    }
 
+    .america{
+        height: 60% !important;
+    }
 }

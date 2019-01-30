@@ -7,27 +7,27 @@
             <h5>CARIBE</h5>
           </div>
         </a>
-    <div class="row america">
-        <a (click)="goTo('norteAmerica')" class="col-4 norteAmerica">
-          <div [@light]="status['norteAmerica']">
-            <h5>NORTE AMÉRICA</h5>
-          </div>
-        </a>
-        <a (click)="goTo('centroAmerica')" class="col-4 centroAmerica">
-          <div [@light]="status['centroAmerica']">
-            <h5>CENTRO AMÉRICA</h5>
-          </div>
-        </a>
-        <a (click)="goTo('surAmerica')" class="col-4 surAmerica">
-          <div [@light]="status['surAmerica']">
-            <h5>SUR AMÉRICA</h5>
-          </div>
-        </a>
-    </div>
   </div>
   <div class="col-sm-7">
-    <div class="row">
-          <a (click)="goTo('europa')" class="col-6 europa">
+      <div class="row america">
+          <a (click)="goTo('norteAmerica')" class="col-4 norteAmerica">
+            <div [@light]="status['norteAmerica']">
+              <h5>NORTE AMÉRICA</h5>
+            </div>
+          </a>
+          <a (click)="goTo('centroAmerica')" class="col-4 centroAmerica">
+            <div [@light]="status['centroAmerica']">
+              <h5>CENTRO AMÉRICA</h5>
+            </div>
+          </a>
+          <a (click)="goTo('surAmerica')" class="col-4 surAmerica">
+            <div [@light]="status['surAmerica']">
+              <h5>SUR AMÉRICA</h5>
+            </div>
+          </a>
+      </div>
+    <div class="row europa">
+          <a (click)="goTo('europa')" class="col-6">
             <div [@light]="status['europa']">
               <h5>EUROPA</h5>
             </div>

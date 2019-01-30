@@ -2,34 +2,42 @@
 
   <div id="form" class="form" *ngIf="items.length >= 1">
     <div class="img-wrapper">
-      <img class="img-responsive center" [src]="items[itemSelected].foto" alt="">
+      <img class="img-responsive center" src="/assets/img/promociones/{{item.foto}}" alt="">
     </div>
     <img class="aditamento" src="src/assets/icons/avion_corto-15.png" alt="Avion corto">
   </div>
 
   <!-- form goes here -->
-  <form *ngIf="form" (ngSubmit)="processForm()">
-      <h4>Deseamos que tu experiencia sea la mejor</h4>
-      <h6 *ngIf="form" >Un asesor se pondrá en contacto contigo</h6>
-    <!-- name -->
-    <div class="field">
-      <input type="text" name="name" class="input" placeholder="Nombre y apellido" [(ngModel)]="name">
-    </div>
 
-    <!-- email -->
-    <div class="field">
-      <input type="email" name="email" class="input" placeholder="Correo" [(ngModel)]="email">
-    </div>
-
-    <!-- phone -->
-    <div class="field">
-      <input type="text" name="phone" class="input" placeholder="Teléfono" [(ngModel)]="phone">
-    </div>
-    <!-- city -->
-    <div class="field">
-      <input type="text" name="city" class="input" placeholder="Ciudad" [(ngModel)]="city">
-    </div>
-    <p>Como te gustaria que nos comuniquemos</p>
+<!--The whole content below can be removed with the new code.-->
+<form name="form" *ngIf="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <h4>Deseamos que tu experiencia sea la mejor</h4>
+    <h6 *ngIf="form" >Un asesor se pondrá en contacto contigo</h6>
+  <div class="field">
+      <input type="text" class="input form-control" name="name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required placeholder="Nombre y apellido"/>
+      <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+          <div *ngIf="name.errors.required">Nombre es requerido</div>
+      </div>
+  </div>
+  <div class="field">
+      <input type="text" class="input form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email placeholder="Correo electrónico"/>
+      <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+          <div *ngIf="email.errors.required">Correo electrónico requerido</div>
+          <div *ngIf="email.errors.email">Ingrese correo electrónico válido</div>
+      </div>
+  </div>
+  <div class="field">
+      <input type="number" class="input form-control" name="phone" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" minlength="12" placeholder="Celular" />
+      <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+          <div *ngIf="phone.errors.minlength">Celular debe tener minimo 10 dígitos</div>
+      </div>
+  </div>
+  <div class="field">
+      <input type="text" class="input form-control" name="city" [(ngModel)]="model.city" #city="ngModel" [ngClass]="{ 'is-invalid': f.submitted && city.invalid }" placeholder="Ciudad"/>
+      <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+      </div>
+  </div>
+  <p>Como te gustaria que nos comuniquemos</p>
     <!--<div class="row">
       <button *ngIf="!destinos" (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/wtpp verde-15.png" alt="Whatsapp"></button>
       <button *ngIf="!destinos" (click)="submit()" type="submit" class="col-6 button is-danger is-large"><img src="/assets/icons/telefono verd-15.png" alt="Teléfono"></button>
@@ -37,11 +45,11 @@
     </div>-->
 
     <button class="btn-shop">Shopping Center ahora</button>
+</form>
 
-  </form>
-
+  
   <div *ngIf="!form">
     <a href="/" class="btn btn-secondary btn-lg btn-block">Volver al inicio</a>
   </div>
-
+  
 </app-layout>

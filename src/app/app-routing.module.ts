@@ -18,10 +18,9 @@ const routes: Route[] = [
   { path: 'gold-trip/:id', component: LongDescGoldComponent },
   { path: 'busqueda/:keyword', component: PageResultComponent },
   { path: ':titulo', component: SlideShowComponent },
-  { path: ':titulo/:id', component: LongDescriptionComponent },
-  { path: ':titulo/eventos/:id', component: SlideShowComponent },
-  { path: ':titulo/:id/contacto', component: FormularioContactoComponent }
-
+  { path: ':titulo/:id/contacto', component: FormularioContactoComponent },
+  { path: ':titulo/:lugar/:id', component: LongDescriptionComponent },
+  { path: ':titulo/:id', component: LongDescriptionComponent }  
 ];
 
 @NgModule({

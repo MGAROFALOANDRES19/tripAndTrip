@@ -1,39 +1,46 @@
-<div class="menuPrincipalDesktop">
+<div class="menuPrincipalDesktop" *ngIf='elements.promociones.length > 0'>
+  <!--<div class="construccion"><img src="/assets/img/nos-estamos-remodelando.png"/></div>-->
   <div class="row">
     <div class="col-9">
-      <a (click)="goTo('promociones')" class="row Promociones">
+      <a (click)="goTo(elements.promociones[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.promociones[2] + ')'}"
+        class="row Promociones">
         <div [@light]="status['promociones']">
-          <h5>PROMOCIONES</h5>
+          <h5>{{elements.promociones[1]}}</h5>
         </div>
       </a>
       <div class="row" [ngStyle]="{'height':'75%', 'margin':0}">
-          <a (click)="goTo('eventos')" class="col-7 Eventos">
-            <div [@light]="status['eventos']">
-              <h5>EVENTOS</h5>
-            </div>
-          </a>
-          <a (click)="goTo('love-trip')" class="col-5 LoveTrip" [ngStyle]="{'padding':0}">
-              <div [@light]="status['love-trip']">
-                <h5>LOVE TRIP</h5>
-              </div>
-            </a>
-          <a (click)="goTo('destinos')" class="col-7 Destinos">
-            <div [@light]="status['destinos']">
-              <h5>DESTINOS</h5>
-            </div>
-          </a>
-          
-          <a (click)="goTo('news')" class="col-5 News">
-            <div [@light]="status['news']">
-              <h5>NEWS</h5>
-            </div>
-          </a>
-        </div>
+        <a (click)="goTo(elements.destinos[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.destinos[2] + ')'}"
+          class="col-7 Destinos">
+          <div [@light]="status['destinos']">
+            <h5>{{elements.destinos[1]}}</h5>
+          </div>
+        </a>
+        <a (click)="goTo(elements.love[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.love[2] + ')'}"
+          class="col-5 LoveTrip" [ngStyle]="{'padding':0}">
+          <div [@light]="status['love-trip']">
+            <h5>{{elements.love[1]}}</h5>
+          </div>
+        </a>
+        <a (click)="goTo(elements.eventos[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.eventos[2] + ')'}"
+          class="col-7 Eventos">
+          <div [@light]="status['eventos']">
+            <h5>{{elements.eventos[1]}}</h5>
+          </div>
+        </a>
+
+        <a (click)="goTo(elements.news[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.news[2] + ')'}"
+          class="col-5 News">
+          <div [@light]="status['news']">
+            <h5>{{elements.news[1]}}</h5>
+          </div>
+        </a>
+      </div>
     </div>
     <div class="col-3 hvr-glow">
-      <a (click)="goTo('gold-trip')" class="col-12 GoldTrip">
+      <a (click)="goTo(elements.gold[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.gold[2] + ')'}"
+        class="col-12 GoldTrip">
         <div [@light]="status['gold-trip']">
-          <h5 class="" >GOLD TRIP</h5>
+          <h5 class="">{{elements.gold[1]}}</h5>
         </div>
       </a>
     </div>
@@ -42,41 +49,48 @@
 </div>
 
 
-
 <div class="menuPrincipal">
-  <a (click)="goTo('promociones')" class="row Promociones">
+  <!--<div class="construccion"><img src="/assets/img/nos-estamos-remodelando-movil.png"/></div>-->
+  <a (click)="goTo(elements.promociones[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.promociones[2] + ')'}"
+    class="row Promociones">
     <div [@light]="status['promociones']">
-      <h5>PROMOCIONES</h5>
+      <h5>{{elements.promociones[1]}}</h5>
     </div>
   </a>
-  <div class="row" [ngStyle]="{'height':'45%', 'margin':0}">
+  <div class="row" [ngStyle]="{
+                              'height':'45%',
+                              'margin':0
+                            }">
     <div class="col-7" [ngStyle]="{'padding':0}">
-      <a (click)="goTo('eventos')" class="row Eventos">
+        <a (click)="goTo(elements.destinos[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.destinos[2] + ')'}" class="row Destinos">
+          <div [@light]="status['destinos']">
+            <h5>{{elements.destinos[1]}}</h5>
+          </div>
+        </a>
+      <a (click)="goTo(elements.eventos[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.eventos[2] + ')'}" class="row Eventos">
         <div [@light]="status['eventos']">
-          <h5>EVENTOS</h5>
-        </div>
-      </a>
-      <a (click)="goTo('destinos')" class="row Destinos">
-        <div [@light]="status['destinos']">
-          <h5>DESTINOS</h5>
+          <h5>{{elements.eventos[1]}}</h5>
         </div>
       </a>
     </div>
-    <a (click)="goTo('gold-trip')" class="col-5 GoldTrip">
+    <a (click)="goTo(elements.gold[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.gold[2] + ')'}" class="col-5 GoldTrip">
       <div [@light]="status['gold-trip']">
-        <h5>GOLD TRIP</h5>
+        <h5>{{elements.gold[1]}}</h5>
       </div>
     </a>
   </div>
   <div class="row" [ngStyle]="{'height': '30%', 'margin-left': 0}">
-    <a (click)="goTo('love-trip')" class="col-8 LoveTrip" [ngStyle]="{'padding':0}">
+    <a (click)="goTo(elements.love[0])" class="col-8 LoveTrip" [ngStyle]="{
+                                                                      'padding':0,
+                                                                      'background-image': 'url(' + '/assets/img/' + elements.love[2] + ')'
+                                                                    }">
       <div [@light]="status['love-trip']">
-        <h5>LOVE TRIP</h5>
+        <h5>{{elements.love[1]}}</h5>
       </div>
     </a>
-    <a (click)="goTo('news')" class="col-4 News">
+    <a (click)="goTo(elements.news[0])" [ngStyle]="{'background-image': 'url(' + '/assets/img/' + elements.news[2] + ')'}" class="col-5 GoldTrip" class="col-4 News">
       <div [@light]="status['news']">
-        <h5>NEWS</h5>
+        <h5>{{elements.news[1]}}</h5>
       </div>
     </a>
   </div>

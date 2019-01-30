@@ -1,26 +1,26 @@
 
 <!--<img src="/assets/animations/gif de carga trip.gif" alt="Trip and trip"> -->
+<a class="navbar-brand home-logo" href="#" *ngIf="elements.logo.length > 0"><img src="/assets/icons/{{elements.logo[1]}}" alt="{{elements.logo[0]}}"></a>
+<!--<img class="img-header" src="/assets/img/mahir-xuysal-303105-unsplash.gif" alt="">-->
 
-<a class="navbar-brand home-logo" href="#"><img src="/assets/icons/logo.png" alt="logo"></a>
-<!--<img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">-->
-
-
-<video class="img-header" autoplay>
-  <source src="/assets/animations/video_fondo.mp4" type="video/mp4">
-  <source src="/assets/animations/video_fondo.ogg" type="video/ogg">
-  <img class="img-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="">
+<video playsinline class="img-header video-header" autoplay="autoplay" *ngIf="elements.background_home.length > 0" loop poster="/assets/img/mahir-uysal-303105-unsplash.gif">
+  <source src="/assets/{{elements.background_home[1]}}" type="video/mp4">
+    <app-loading-spinner></app-loading-spinner>
 </video>
+
+<img class="img-header image-header" src="/assets/img/mahir-uysal-303105-unsplash.gif" alt="{{elements.background_home[0]}}">
+
 
 <app-searcher></app-searcher>
 <button *ngIf="!showed" (click)="showMenu()" class="pequeno">CATEGORIAS<div>
     <i class="toDown fas fa-caret-down"></i>
   </div></button>
-<div class="boletos">
- <a href="https://www.e-agencias.com.ec/ag81649"> <img src="/assets/icons/despegar-inicio-movil.png" alt="Despegar.com"></a>
+<div class="boletos" *ngIf="elements.despegar.length > 0"> 
+ <a href="{{elements.despegar[1]}}"> <img src="/assets/icons/{{elements.despegar[2]}}" alt="{{elements.despegar[0]}}"></a>
 </div>
-<a href="https://www.e-agencias.com.ec/ag81649">
+<a href="{{elements.despegar[1]}}" *ngIf="elements.despegar.length > 0">
   <!--<div class="ofertas"> <div>Ofertas</div> <h3>BOLETOS Y HOSPEDAJE AHORA</h3></div>-->
-  <img class="ofertas" src="/assets/icons/despegar-inicio-escritorio.png" alt="Despegar.com">
+  <img class="ofertas" src="/assets/icons/{{elements.despegar[3]}}" alt="{{elements.despegar[0]}}">
 </a>
 <div>
 

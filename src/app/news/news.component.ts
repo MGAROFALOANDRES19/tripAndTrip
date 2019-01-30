@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    config: NgbModalConfig,
+    private modalService: NgbModal,
+
+  ) { }
 
   ngOnInit() {
+  }
+
+  open(content) {
+    this.modalService.open(content);
   }
 
 }

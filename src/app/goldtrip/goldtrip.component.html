@@ -1,5 +1,5 @@
 <app-layout>
- <ngb-carousel *ngIf="items.length >= 1">
+ <ngb-carousel *ngIf="items.length >= 1" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)">
     <ng-template ngbSlide>
       <img src="/assets/img/portada-gold.gif" alt="item.alt">
       <div class="carousel-caption">

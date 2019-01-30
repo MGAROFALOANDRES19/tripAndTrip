@@ -21,15 +21,21 @@ a h5{
 }
 
 .Eventos, .Destinos{
-    height: 50%;
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
 
 }
 
+.Eventos{
+    height: 50%;
+}
+
+.Destinos{
+    height: 52%;
+}
+
 .Promociones{
-    background-image: url('/assets/img/promociones.gif');
     height: 25%;
     position: relative;
     margin-right: 0;
@@ -57,7 +63,7 @@ a h5{
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-
+    padding: 0;
 }
 
 .News{
@@ -70,7 +76,7 @@ a h5{
 }
 
 .menuPrincipal, .menuPrincipalDesktop{
-    height: 88.5vh;
+    height: 89vh;
 }
 
 .menuPrincipal div, .menuPrincipalDesktop div{
@@ -141,11 +147,48 @@ a:focus:hover > div{
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   }
 
+  .construccion{
+    position: absolute;
+    z-index: 100000;
+    width: 100%;
+    height: 89%;
+    /* background: rgba(0,0,0,0.5); */
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    /* font-size: 4em; */
+    overflow: hidden;
+    /* padding-top: 2em; */
+}
+
+.construccion img{
+    width: 100%;
+    object-fit: cover
+}
+
   
 @media only screen and (min-width: 768px) {
 
     .menuPrincipal{
         display: none;
+    }
+
+    .construccion{
+        position: absolute;
+    z-index: 100000;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background: rgba(0,0,0,0.5); */
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    /* font-size: 14em; */
+    padding: 0;
+    height: 89%;
+    overflow: hidden;
+    }
+
+    .construccion img{
+        width: 100%;
+    object-fit: cover;
     }
 
     .menuPrincipalDesktop{
@@ -165,7 +208,7 @@ a:focus:hover > div{
     }
 
     .Eventos, .Destinos{
-        padding: 0
+        padding: 0;
     }
 
     .GoldTrip{
@@ -181,14 +224,13 @@ a:focus:hover > div{
         border: 3px solid black;
     }
 
-    .LoveTrip{
-        height: 55%;
-    }
-
-    .Destinos{
+    .Eventos{
         margin-top: -2.2%;
     }
 
+    .LoveTrip{
+        height: 55%;
+    }
     .News{
         height: 45%;
     }
